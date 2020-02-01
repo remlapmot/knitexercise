@@ -13,6 +13,9 @@
 #' knit: tpfun::knit_solutions
 #' ```
 #'
+#' @seealso This function is modified from the example given by Yihui Xie here
+#' \url{https://bookdown.org/yihui/rmarkdown-cookbook/custom-knit.html}.
+#'
 #' @param inputFile The name of the R Markdown file to be rendered.
 #'
 #' @param encoding As per `rmarkdown::render_site()` this is Ignored.
