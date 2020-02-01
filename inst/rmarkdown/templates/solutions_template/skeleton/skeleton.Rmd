@@ -1,0 +1,69 @@
+---
+title: "Generating questions and solutions documents from the same R Markdown document"
+author: 
+date: '`r Sys.Date()`'
+params:
+  solutions: FALSE
+output:
+  html_document: default
+knit: tpfun::knit_solutions
+---
+
+```{r setup, include=FALSE, warning=FALSE, results=FALSE}
+knitr::opts_chunk$set(include = params$solutions)
+```
+
+# Introduction
+
+- This example R Markdown document demonstrates how to include questions and answers in the same Rmd document.
+
+- When rendering the questions, in the YAML header set `solutions: FALSE`
+- When rendering the solutions, in the YAML header set `solutions: TRUE`
+- If rendering using the knit button the output filename will end `-solutions.extension` due to the custom knit function which I modified from Yihui Xie's advice [here](https://bookdown.org/yihui/rmarkdown-cookbook/custom-knit.html).
+
+# Questions
+
+- To generate pdf output you need the TinyTeX package installed, `install.packages('tinytex')`.
+
+- Paragraph text for questions is written in standard R Markdown syntax, which can include LaTeX maths and code chunks.
+
+- In questions, R code chunks for which you want to see the code or output or both require the chunk option `include=TRUE`, i.e.
+  ````
+  ```{r, include=TRUE}`r ''`
+  ...code...
+  ```
+  ````
+
+# Solutions
+
+- Paragraph text for solutions go in `asis` code chunks, i.e.
+  ````
+  ```{asis}`r ''`
+  ...Text explaining the answer ...
+  ```
+  ````
+
+  ```{asis}
+  Paragraph text for answers.
+  ```
+
+- R code chunks for solutions are included as normal, i.e.
+  ````
+  ```{r}`r ''`
+  ...Code for answer...
+  ```
+  ````
+
+- You can use your preferred R Markdown syntax for laying out your questions. I often use simple section headers, e.g.
+  ```
+  # Question 1
+  ```
+
+- For numbered sections add the option `number_sections: true` to the output in the YAML header.
+
+## Example R code chunk
+
+This will only appear when you have set `solutions: TRUE`.
+```{r}
+curve(x^2)
+```
