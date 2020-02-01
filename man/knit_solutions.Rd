@@ -30,8 +30,8 @@ knitr::opts_chunk$set(include = params$solutions)
 ```
 }
 
-or use the provided template R Markdown file by calling
-\code{rmarkdown::draft("my_exercise.Rmd", template = "solns_template", package = "tpfun")}.
+or use the provided template R Markdown file by calling\preformatted{rmarkdown::draft("my_exercise.Rmd", template = "solns_template", package = "tpfun")`.
+}
 }
 \seealso{
 This function is modified from the following example by Yihui Xie
