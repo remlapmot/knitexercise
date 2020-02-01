@@ -63,7 +63,7 @@ knitr::opts_chunk$set(include = params$solutions)
 
 ## Example R code chunk
 
-This will only appear when you have set `solutions: TRUE`.
+The following code chunk will only be included when you have set `solutions: TRUE`.
 ```{r}
 curve(x^2)
 ```
