@@ -19,7 +19,7 @@ and when you have set \code{solution: TRUE} in the \verb{params:} field of your 
 }
 \details{
 This function is used with the \verb{knit:} field of the YAML header of an R Markdown file.
-For example, if you wanted pdf output the YAML header would be as follows.\preformatted{params:
+For example, if you want pdf output the YAML header would be as follows.\preformatted{params:
   solutions: TRUE
 output: pdf_document
 knit: tpfun::knit_solutions
@@ -28,11 +28,12 @@ knit: tpfun::knit_solutions
 You will additionally need to define a setup chunk that sets\preformatted{```\{r setup, include=FALSE, warning=FALSE, results=FALSE\}
 knitr::opts_chunk$set(include = params$solutions)
 ```
-Or use the provided template
-`rmarkdown::draft("my_exercise.Rmd", template = "solns_template", package = "tpfun")`.
 }
+
+or use the provided template R Markdown file by calling
+\code{rmarkdown::draft("my_exercise.Rmd", template = "solns_template", package = "tpfun")}.
 }
 \seealso{
-This function is modified from the example given by Yihui Xie here
+This function is modified from the following example by Yihui Xie
 \url{https://bookdown.org/yihui/rmarkdown-cookbook/custom-knit.html}.
 }
