@@ -5,7 +5,7 @@
 #' and when you have set `solution: TRUE` in the `params:` field of your YAML header.
 #'
 #' This function is used with the `knit:` field of the YAML header of an R Markdown file.
-#' For example, if you wanted pdf output the YAML header would be as follows.
+#' For example, if you want pdf output the YAML header would be as follows.
 #' ```
 #' params:
 #'   solutions: TRUE
@@ -17,10 +17,11 @@
 #' ```{r setup, include=FALSE, warning=FALSE, results=FALSE}
 #' knitr::opts_chunk$set(include = params$solutions)
 #' ```
-#' Or use the provided template
+#' ````
+#' or use the provided template R Markdown file by calling
 #' `rmarkdown::draft("my_exercise.Rmd", template = "solns_template", package = "tpfun")`.
 #'
-#' @seealso This function is modified from the example given by Yihui Xie here
+#' @seealso This function is modified from the following example by Yihui Xie
 #' \url{https://bookdown.org/yihui/rmarkdown-cookbook/custom-knit.html}.
 #'
 #' @param inputFile The name of the R Markdown file to be rendered.
