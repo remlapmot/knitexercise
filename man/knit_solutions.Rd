@@ -26,6 +26,13 @@ params:
 output: pdf_document
 knit: tpfun::knit_solutions
 ```
+You will additionally need to define a setup chunk that sets
+````
+```{r setup, include=FALSE, warning=FALSE, results=FALSE}
+knitr::opts_chunk$set(include = params$solutions)
+```
+Or use the provided template
+`rmarkdown::draft("my_exercise.Rmd", template = "solns_template", package = "tpfun")`.
 }
 \seealso{
 This function is modified from the example given by Yihui Xie here
