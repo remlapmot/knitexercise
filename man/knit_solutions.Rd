@@ -27,3 +27,7 @@ output: pdf_document
 knit: tpfun::knit_solutions
 ```
 }
+\seealso{
+This function is modified from the example given by Yihui Xie here
+\url{https://bookdown.org/yihui/rmarkdown-cookbook/custom-knit.html}.
+}
