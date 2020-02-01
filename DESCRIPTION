@@ -1,0 +1,13 @@
+Package: tpfun
+Type: Package
+Title: Miscellaneous Functions By Tom Palmer
+Version: 0.1.0
+Authors@R: person("Tom", "Palmer", email = "remlapmot@hotmail.com",
+                  role = c("aut", "cre"), comment = c(ORCID = "0000-0003-4655-4511"))
+Description: Miscellaneous functions
+Depends: R (>= 3.1.0)
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
+Imports:
+    rmarkdown

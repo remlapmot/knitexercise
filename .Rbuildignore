@@ -1,0 +1,15 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^docs$
+^_pkgdown\.yml$
+^LICENSE$
+^README\.Rmd$
+^Meta$
+^doc$
+^\.travis\.yml$
+^pkgdown$
+^README\.Rmd$       # An Rmarkdown file used to generate README.md
+README.Rmd
+^cran-comments\.md$ # Comments for CRAN submission
+cran-comments.md
+^.github$
