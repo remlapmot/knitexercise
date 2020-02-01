@@ -9,30 +9,28 @@ knit_solutions(inputFile, encoding)
 \arguments{
 \item{inputFile}{The name of the R Markdown file to be rendered.}
 
-\item{encoding}{As per `rmarkdown::render_site()` this is Ignored.
+\item{encoding}{As per \code{rmarkdown::render_site()} this is Ignored.
 The encoding is always assumed to be UTF-8.}
 }
 \description{
-This function adds `-solution` to the end of the filename of the output document
+This function adds \code{-solution} to the end of the filename of the output document
 from your R Markdown document when rendered by clicking the Knit button in RStudio
-and when you have set `solution: TRUE` in the `params:` field of your YAML header.
+and when you have set \code{solution: TRUE} in the \verb{params:} field of your YAML header.
 }
 \details{
-This function is used with the `knit:` field of the YAML header of an R Markdown file.
-For example, if you wanted pdf output the YAML header would be as follows.
-```
-params:
+This function is used with the \verb{knit:} field of the YAML header of an R Markdown file.
+For example, if you wanted pdf output the YAML header would be as follows.\preformatted{params:
   solutions: TRUE
 output: pdf_document
 knit: tpfun::knit_solutions
-```
-You will additionally need to define a setup chunk that sets
-````
-```{r setup, include=FALSE, warning=FALSE, results=FALSE}
+}
+
+You will additionally need to define a setup chunk that sets\preformatted{```\{r setup, include=FALSE, warning=FALSE, results=FALSE\}
 knitr::opts_chunk$set(include = params$solutions)
 ```
 Or use the provided template
 `rmarkdown::draft("my_exercise.Rmd", template = "solns_template", package = "tpfun")`.
+}
 }
 \seealso{
 This function is modified from the example given by Yihui Xie here
