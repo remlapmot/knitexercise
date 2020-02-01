@@ -1,1 +1,5 @@
-name: Example exercise including questions and solutions
+name: Exercise including questions and solutions
+description: >
+  Template for creating an exercise for rendering questions and solutions from
+  the same R Markdown document.
+create_dir: true
