@@ -4,7 +4,7 @@ Title: Miscellaneous Functions By Tom Palmer
 Version: 0.1.0
 Authors@R: person("Tom", "Palmer", email = "remlapmot@hotmail.com",
                   role = c("aut", "cre"), comment = c(ORCID = "0000-0003-4655-4511"))
-Description: Miscellaneous functions
+Description: Miscellaneous functions I use in the course of my work.
 Depends: R (>= 3.2.0)
 License: GPL-3
 Encoding: UTF-8
