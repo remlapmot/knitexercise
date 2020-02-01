@@ -20,7 +20,7 @@
 #' ````
 #' or use the provided template R Markdown file by calling
 #' ```
-#' rmarkdown::draft("my_exercise.Rmd", template = "solns_template", package = "tpfun")
+#' rmarkdown::draft("my_exercise.Rmd", template = "solutions_template", package = "tpfun")
 #' ```
 #'
 #' @seealso This function is modified from the following example by Yihui Xie
