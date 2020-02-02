@@ -9,7 +9,7 @@ output:
 knit: tpfun::knit_solutions
 ---
 
-```{r setup, include=FALSE, warning=FALSE, results=FALSE}
+```{r setup, include=FALSE, cache=FALSE}
 knitr::opts_chunk$set(include = params$solutions)
 ```
 
