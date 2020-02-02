@@ -10,7 +10,7 @@
 #' params:
 #'   solutions: TRUE
 #' output: pdf_document
-#' knit: tpfun::knit_exercise
+#' knit: knitexercise::knit_exercise
 #' ```
 #' This function also sets the global chunk option `include = FALSE` when `solutions: FALSE`.
 #'
