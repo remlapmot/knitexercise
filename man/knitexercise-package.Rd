@@ -3,17 +3,19 @@
 \docType{package}
 \name{knitexercise-package}
 \alias{knitexercise-package}
-\title{knitexercise: knit exercise questions and solutions from the same R Markdown document}
+\title{knitexercise: Knit exercise questions and solutions from the same R Markdown document}
 \description{
-By setting the \code{solutions} parameter in the YAML header of your R Markdown document
-this package provides a custom knit function which sets the global chunk option
-\code{include} from that value (i.e \code{FALSE} for your questions document and \code{TRUE}
-for your solutions document).
+This package provides a custom knit function, \code{knit_exercise}, which sets the global
+chunk option \code{include}. This is controlled by setting the \code{solutions} parameter in
+the YAML header of the R Markdown document.
 }
 \details{
-And you need to specify this function in the \verb{knit:} field of your YAML header.
-So your YAML header should look something like the following.\preformatted{---
+Hence to generate your output document with questions set \code{solutions: FALSE}.
+For your output document with your solutions set \code{solutions: TRUE}.
+
+Your YAML header should look something like the following.\preformatted{---
 title: My Title
+author: My Name
 params:
   solutions: FALSE
 knit: knitexercise::knit_exercise
@@ -21,10 +23,10 @@ output: html_document
 ---
 }
 
-For your solutions document \code{-solutions} is added to the output document filename
-before the file extension.
+For your solutions output document \code{-solutions} is added to the filename before
+the file extension.
 
-There is a template R Markdown document which you can launch through the
-File | New File | R Markdown... | From Template menu or with the following code.\preformatted{rmarkdown::draft("my_exercise.Rmd", template = "exercise_template", package = "knitexercise")
+There is a template R Markdown document which you can open through the:
+\emph{File | New File | R Markdown... | From Template} menu or with the following code.\preformatted{rmarkdown::draft("my_exercise.Rmd", template = "exercise_template", package = "knitexercise")
 }
 }
