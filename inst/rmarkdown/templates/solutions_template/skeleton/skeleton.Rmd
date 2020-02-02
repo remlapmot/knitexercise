@@ -6,12 +6,8 @@ params:
   solutions: FALSE
 output:
   html_document: default
-knit: tpfun::knit_solutions
+knit: knitexercise::knit_exercise
 ---
-
-```{r setup, include=FALSE, cache=FALSE}
-knitr::opts_chunk$set(include = params$solutions)
-```
 
 # Introduction
 
