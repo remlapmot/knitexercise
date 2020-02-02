@@ -13,19 +13,25 @@ knit_exercise(inputFile, encoding)
 The encoding is always assumed to be UTF-8.}
 }
 \description{
-This function adds \code{-solution} to the end of the filename of the output document
-from your R Markdown document when rendered by clicking the Knit button in RStudio
-and when you have set \code{solution: TRUE} in the \verb{params:} field of your YAML header.
+This function adds \code{-solution} to the end of the filename before the file extension
+of the output document from your R Markdown document when rendered by clicking the
+Knit button in RStudio and when you have set \code{solution: TRUE} in the \verb{params:} field
+of your YAML header.
 }
 \details{
 This function is used with the \verb{knit:} field of the YAML header of an R Markdown file.
-For example, if you want pdf output the YAML header would be as follows.\preformatted{params:
+For example, if you want pdf output the YAML header would be as follows.\preformatted{---
+title: My Title
+params:
   solutions: TRUE
 output: pdf_document
 knit: knitexercise::knit_exercise
+---
 }
 
-This function also sets the global chunk option \code{include = FALSE} when \code{solutions: FALSE}.
+This function also sets the global chunk option \code{include} to the value specified by
+\verb{solutions:}, i.e. set \code{solutions: FALSE} for your questions document and
+\code{solutions: TRUE} for your solutions document.
 }
 \seealso{
 This function is modified from the following example by Yihui Xie
