@@ -8,17 +8,20 @@
 #' And you need to specify this function in the `knit:` field of your YAML header.
 #' So your YAML header should look something like the following.
 #' ```
+#' ---
 #' title: My Title
 #' params:
 #'   solutions: FALSE
 #' knit: knitexercise::knit_exercise
+#' output: html_document
+#' ---
 #' ```
 #'
 #' For your solutions document `-solutions` is added to the output document filename
 #' before the file extension.
 #'
 #' There is a template R Markdown document which you can launch through the
-#' File | New File | R Markdown... | From Template menu or as follows.
+#' File | New File | R Markdown... | From Template menu or with the following code.
 #' ```
 #' rmarkdown::draft("my_exercise.Rmd", template = "exercise_template", package = "knitexercise")
 #' ```
