@@ -32,7 +32,7 @@
 #' The encoding is always assumed to be UTF-8.
 #'
 #' @export
-knit_solutions <- function(inputFile, encoding) {
+knit_exercise <- function(inputFile, encoding) {
 	solns <- rmarkdown::yaml_front_matter(inputFile)$params$solutions; if (solns) {
 		rmarkdown::render(
 			input       = inputFile,
