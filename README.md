@@ -1,5 +1,7 @@
 # knitexercise
 
+[![R-CMD-check](https://github.com/remlapmot/knitexercise/workflows/R-CMD-check/badge.svg)](https://github.com/remlapmot/knitexercise/actions?workflow=R-CMD-check)
+
 This is a simple package which provides a custom knit function, `knit_exercise`, to knit separate questions and answers output documents from the same R Markdown file.
 
 ## Installation
