@@ -1,6 +1,6 @@
 # knitexercise
 
-This is a simple package which provides a convenience function, `knit_exercise`, to knit separate questions and answers output documents from the same R Markdown file.
+This is a simple package which provides a custom knit function, `knit_exercise`, to knit separate questions and answers output documents from the same R Markdown file.
 
 ## Installation
 
@@ -13,8 +13,8 @@ remotes::install_github("remlapmot/knitexercise")
 To update the package, simply run that command again.
 
 ## Usage
-There is a template provided which you can launch through the File | New File |
-R Markdown... | From Template menu or with the following code.
+There is a template provided which you can launch through the 
+*File | New File | R Markdown... | From Template* menu or with the following code.
 ``` r
 rmarkdown::draft("my_exercise.Rmd", template = "exercise_template", package = "knitexercise")
 ```
