@@ -10,18 +10,9 @@
 #' params:
 #'   solutions: TRUE
 #' output: pdf_document
-#' knit: tpfun::knit_solutions
+#' knit: tpfun::knit_exercise
 #' ```
-#' You will additionally need to define a setup chunk that sets
-#' ````
-#' ```{r setup, include=FALSE, warning=FALSE, results=FALSE}
-#' knitr::opts_chunk$set(include = params$solutions)
-#' ```
-#' ````
-#' or use the provided template R Markdown file by calling
-#' ```
-#' rmarkdown::draft("my_exercise.Rmd", template = "solutions_template", package = "tpfun")
-#' ```
+#' This function also sets the global chunk option `include = FALSE` when `solutions: FALSE`.
 #'
 #' @seealso This function is modified from the following example by Yihui Xie
 #' \url{https://bookdown.org/yihui/rmarkdown-cookbook/custom-knit.html}.
