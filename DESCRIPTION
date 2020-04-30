@@ -14,5 +14,6 @@ Imports:
     knitr,
     methods,
     rmarkdown
-RoxygenNote: 7.0.2
+VignetteBuilder: knitr
+RoxygenNote: 7.1.0
 Roxygen: list(markdown = TRUE)
