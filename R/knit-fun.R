@@ -29,6 +29,12 @@
 #' @param encoding As per `rmarkdown::render_site()` this is Ignored.
 #' The encoding is always assumed to be UTF-8.
 #'
+#' @examples
+#' \dontrun{
+#' # To launch the template issue
+#' rmarkdown::draft('exercise.Rmd', template = 'exercise_template', package = 'knitexercise')
+#' }
+#'
 #' @export
 knit_exercise <- function(inputFile, encoding) {
 	solns <- rmarkdown::yaml_front_matter(inputFile)$params$solutions; if (solns) {
