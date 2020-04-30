@@ -1,0 +1,97 @@
+---
+title: "Generating questions and solutions documents from the same R Markdown document"
+author:
+- name: "Tom Palmer"
+  affiliation: "MRC IEU and Population Health Sciences, Bristol Medical School, University of Bristol"
+  email: tom.palmer@bristol.ac.uk
+date: '`r Sys.Date()`'
+output:
+  rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Generating questions and solutions documents from the same R Markdown document}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+# Introduction
+
+This package provides a simple extra helper function when knitting an `.Rmd` file in which we have questions and solutions.
+
+We ensure elements which are questions are either included as Rmarkdown text or as code chunk with `include=TRUE`.
+
+We suppress or show the solutions with the knitr global document `include` chunk option controlled by `knitr::opts_chunk$set(include)`. And paragraph Rmarkdown text for the solutions is included in an `asis` code chunk.
+
+# A simple example Rmd file
+
+Therefore a simple `.Rmd` file might be the following.
+
+````md
+---
+title: "Example exercise"
+output: html_document
+---
+
+`r ''````{r setup, include=FALSE}
+knitr::opts_chunk$set(include = FALSE) # change to TRUE when knitting solutions
+```
+
+1. This is question 1. Which might have some R code you always want to show.
+    `r ''````{r, include=TRUE}
+    # example code for the question
+    ```
+    
+    `r ''````{asis}
+    Paragraph text for the solution can be kept in the document in an `asis` chunk. 
+    And solution R code in an `r` chunk. 
+    Both of these will use the `include` value from the `setup` chunk.
+    ```
+    
+    `r ''````{r}
+    # example code for the solution
+    ```
+
+2. This is question 2.
+````
+
+To render the solutions output file we run the file with the following code.
+````md
+`r ''````{r setup, include=FALSE}
+knitr::opts_chunk$set(include = TRUE)
+```
+````
+
+# Parameterising our Rmd file
+
+Instead of changing the `include` option in the setup chunk in the YAML header we can specify a `params` parameter with name of our choosing and pass it to `knitr::opts_chunk(include)` as follows.
+
+````md
+---
+title: "Example exercise"
+output: html_document
+params:
+  solutions: FALSE
+---
+
+```{r setup, include=FALSE}`r ''`
+knitr::opts_chunk$set(include = params$solutions)
+```
+````
+
+# Customising the RStudio Knit button
+
+The knitexercise package provides the `knit_exercise()` function to customise the Knit button.
+
+You specify it in the YAML header as follows.
+```md
+---
+title: "Example exercise"
+output: html_document
+params:
+  solutions: FALSE
+knit: knitexercise::knit_exercise
+---
+```
+
+This function sets `knitr::opts_chunk(include)`. If knitting with the Knit button, when `solutions:` is set to `TRUE` it adds `-solutions` to the end of the output filename before the file extension.
+
+Customising the Knit button is described by Yihui Xie [here](https://bookdown.org/yihui/rmarkdown-cookbook/custom-knit.html).
