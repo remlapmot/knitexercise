@@ -34,8 +34,10 @@ This function also sets the global chunk option \code{include} to the value spec
 \code{solutions: TRUE} for your solutions document.
 }
 \examples{
+\dontrun{
 # To launch the template issue
 rmarkdown::draft('exercise.Rmd', template = 'exercise_template', package = 'knitexercise')
+}
 
 }
 \seealso{
