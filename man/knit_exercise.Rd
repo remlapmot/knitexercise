@@ -33,6 +33,11 @@ This function also sets the global chunk option \code{include} to the value spec
 \verb{solutions:}, i.e. set \code{solutions: FALSE} for your questions document and
 \code{solutions: TRUE} for your solutions document.
 }
+\examples{
+# To launch the template issue
+rmarkdown::draft('exercise.Rmd', template = 'exercise_template', package = 'knitexercise')
+
+}
 \seealso{
 This function is modified from the following example by Yihui Xie
 \url{https://bookdown.org/yihui/rmarkdown-cookbook/custom-knit.html}.
