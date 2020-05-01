@@ -82,7 +82,7 @@ knitr::opts_chunk$set(include = params$solutions)
 The knitexercise package provides the `knit_exercise()` function to customise the Knit button.
 
 You specify it in the YAML header as follows.
-```md
+```yaml
 ---
 title: "Example exercise"
 output: html_document
