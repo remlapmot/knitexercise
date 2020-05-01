@@ -1,5 +1,5 @@
 ---
-title: "Generating questions and solutions documents from the same R Markdown document"
+title: "Exercise"
 author: 
 date: '`r Sys.Date()`'
 params:
@@ -9,57 +9,26 @@ output:
 knit: knitexercise::knit_exercise
 ---
 
-# Introduction
+<!-- When knitting your own document please delete or 
+comment out the following example code. -->
 
-- This example R Markdown document demonstrates how to include questions and answers in the same Rmd document.
+- When knitting the questions, set `solutions: FALSE` in the YAML header.
+- When knitting the solutions, set `solutions: TRUE` in the YAML header.
+- If using the Knit button in RStudio the output filename will have `-solutions` appended before the file extension.
 
-- When rendering the questions, in the YAML header set `solutions: FALSE`
-- When rendering the solutions, in the YAML header set `solutions: TRUE`
-- If rendering using the knit button the output filename will end `-solutions.extension` due to the custom knit function which I modified from Yihui Xie's advice [here](https://bookdown.org/yihui/rmarkdown-cookbook/custom-knit.html).
+1. This is an example question. It contains some R code which is always included in the output document with the chunk option `include=TRUE`.
+    ```{r, include=TRUE}
+    1 + 1
+    ```
 
-# Questions
+    ```{asis}
+    Paragraph text for solutions is put in `asis` code chunks.
+    
+    R code chunks for solutions are put in standard `r` code chunks.
+    ```
 
-- To generate pdf output you need the TinyTeX package installed, `install.packages('tinytex')`.
-
-- Paragraph text for questions is written in standard R Markdown syntax, which can include LaTeX maths and code chunks.
-
-- In questions, R code chunks for which you want to see the code or output or both require the chunk option `include=TRUE`, i.e.
-  ````
-  ```{r, include=TRUE}`r ''`
-  ...code...
-  ```
-  ````
-
-# Solutions
-
-- Paragraph text for solutions go in `asis` code chunks, i.e.
-  ````
-  ```{asis}`r ''`
-  ...Text explaining the answer ...
-  ```
-  ````
-
-  ```{asis}
-  Paragraph text for answers.
-  ```
-
-- R code chunks for solutions are included as normal, i.e.
-  ````
-  ```{r}`r ''`
-  ...Code for answer...
-  ```
-  ````
-
-- You can use your preferred R Markdown syntax for laying out your questions. I often use simple section headers, e.g.
-  ```
-  # Question 1
-  ```
-
-- For numbered sections add the option `number_sections: true` to the output in the YAML header.
-
-## Example R code chunk
-
-The following code chunk will only be included when you have set `solutions: TRUE`.
-```{r}
-curve(x^2)
-```
+    ```{r}
+    1 + 1
+    ```
+  
+2. This is question 2.
