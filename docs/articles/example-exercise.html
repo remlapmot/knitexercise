@@ -85,7 +85,7 @@
       MRC IEU and Population Health Sciences, Bristol Medical School, University of Bristol<br><a class="author_email" href="mailto:#"></a><a href="mailto:tom.palmer@bristol.ac.uk" class="email">tom.palmer@bristol.ac.uk</a>
       </address>
                   
-            <h4 class="date">2020-04-30</h4>
+            <h4 class="date">2020-05-01</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/remlapmot/knitexercise/blob/master/vignettes/example-exercise.Rmd"><code>vignettes/example-exercise.Rmd</code></a></small>
       <div class="hidden name"><code>example-exercise.Rmd</code></div>
@@ -155,13 +155,13 @@
 <a href="#customising-the-rstudio-knit-button" class="anchor"></a>Customising the RStudio Knit button</h1>
 <p>The knitexercise package provides the <code><a href="../reference/knit_exercise.html">knit_exercise()</a></code> function to customise the Knit button.</p>
 <p>You specify it in the YAML header as follows.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode md"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1"></a>---</span>
-<span id="cb4-2"><a href="#cb4-2"></a>title: "Example exercise"</span>
-<span id="cb4-3"><a href="#cb4-3"></a>output: html_document</span>
-<span id="cb4-4"><a href="#cb4-4"></a>params:</span>
-<span id="cb4-5"><a href="#cb4-5"></a>  solutions: FALSE</span>
-<span id="cb4-6"><a href="#cb4-6"></a>knit: knitexercise::knit_exercise</span>
-<span id="cb4-7"><a href="#cb4-7"></a>---</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1"></a><span class="pp">---</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Example exercise"</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> html_document</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a><span class="fu">params</span><span class="kw">:</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a><span class="at">  </span><span class="fu">solutions</span><span class="kw">:</span><span class="at"> </span><span class="ch">FALSE</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a><span class="fu">knit</span><span class="kw">:</span><span class="at"> knitexercise::knit_exercise</span></span>
+<span id="cb4-7"><a href="#cb4-7"></a><span class="pp">---</span></span></code></pre></div>
 <p>This function sets <code><a href="https://rdrr.io/pkg/knitr/man/opts_chunk.html">knitr::opts_chunk(include)</a></code>. If knitting with the Knit button, when <code>solutions:</code> is set to <code>TRUE</code> it adds <code>-solutions</code> to the end of the output filename before the file extension.</p>
 <p>Customising the Knit button is described by Yihui Xie <a href="https://bookdown.org/yihui/rmarkdown-cookbook/custom-knit.html">here</a>.</p>
 </div>
