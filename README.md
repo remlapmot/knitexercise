@@ -8,11 +8,10 @@ This is a simple package which provides a custom knit function, `knit_exercise`,
 
 You can install the package from GitHub with:
 ``` r
-# Uncomment the next line if you don't have the remotes package installed.
-# install.packages("remotes")
+if (!requireNamespace("remotes", quitely = TRUE)) install.packages("remotes")
 remotes::install_github("remlapmot/knitexercise")
 ```
-To update the package, simply run that command again.
+To update the package, simply run the `install_github()` command again.
 
 ## Usage
 There is a template provided which you can launch through the 
@@ -22,4 +21,4 @@ rmarkdown::draft("my_exercise.Rmd", template = "exercise_template", package = "k
 ```
 
 ## Author
-Tom Palmer
+Tom Palmer, MRC Integrative Epidemiology Unit and Population Health Sciences, Bristol Medical School, University of Bristol.
