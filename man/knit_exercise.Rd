@@ -20,14 +20,16 @@ of your YAML header.
 }
 \details{
 This function is used with the \verb{knit:} field of the YAML header of an R Markdown file.
-For example, if you want pdf output the YAML header would be as follows.\preformatted{---
+For example, if you want pdf output the YAML header would be as follows.
+
+\if{html}{\out{<div class="sourceCode">}}\preformatted{---
 title: My Title
 params:
   solutions: TRUE
 output: pdf_document
 knit: knitexercise::knit_exercise
 ---
-}
+}\if{html}{\out{</div>}}
 
 This function also sets the global chunk option \code{include} to the value specified by
 \verb{solutions:}, i.e. set \code{solutions: FALSE} for your questions document and

@@ -13,7 +13,9 @@ the YAML header of the R Markdown document.
 Hence to generate your output document with questions set \code{solutions: FALSE}.
 For your output document with your solutions set \code{solutions: TRUE}.
 
-Your YAML header should look something like the following.\preformatted{---
+Your YAML header should look something like the following.
+
+\if{html}{\out{<div class="sourceCode">}}\preformatted{---
 title: My Title
 author: My Name
 params:
@@ -21,12 +23,14 @@ params:
 knit: knitexercise::knit_exercise
 output: html_document
 ---
-}
+}\if{html}{\out{</div>}}
 
 For your solutions output document \code{-solutions} is added to the filename before
 the file extension.
 
 There is a template R Markdown document which you can open through the:
-\emph{File | New File | R Markdown... | From Template} menu or with the following code.\preformatted{rmarkdown::draft("my_exercise.Rmd", template = "exercise_template", package = "knitexercise")
-}
+\emph{File | New File | R Markdown... | From Template} menu or with the following code.
+
+\if{html}{\out{<div class="sourceCode">}}\preformatted{rmarkdown::draft("my_exercise.Rmd", template = "exercise_template", package = "knitexercise")
+}\if{html}{\out{</div>}}
 }
