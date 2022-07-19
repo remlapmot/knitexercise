@@ -12,7 +12,6 @@ Description: Provides a function to knit questions and solutions documents from 
 Depends: R (>= 3.2.0)
 License: GPL-3
 Encoding: UTF-8
-LazyData: true
 Imports:
     knitr,
     methods,
