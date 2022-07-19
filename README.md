@@ -1,4 +1,4 @@
-# knitexercise
+# knitexercise: R package to knit questions and solutions documents from the same R Markdown document
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/remlapmot/knitexercise/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/remlapmot/knitexercise/actions/workflows/R-CMD-check.yaml)
