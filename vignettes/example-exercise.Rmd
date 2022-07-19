@@ -1,10 +1,5 @@
 ---
 title: "Generating questions and solutions documents from the same R Markdown document"
-author:
-- name: "Tom Palmer"
-  affiliation: "MRC IEU and Population Health Sciences, Bristol Medical School, University of Bristol"
-  email: tom.palmer@bristol.ac.uk
-date: '`r Sys.Date()`'
 output:
   rmarkdown::html_vignette
 vignette: >
