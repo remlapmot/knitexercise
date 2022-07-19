@@ -20,28 +20,28 @@ We suppress or show the solutions with the knitr global document `include` chunk
 
 Therefore a simple `.Rmd` file might be the following.
 
-````md
+````{verbatim}
 ---
 title: "Example exercise"
 output: html_document
 ---
 
-`r ''````{r setup, include=FALSE}
+```{r setup, include=FALSE}
 knitr::opts_chunk$set(include = FALSE) # change to TRUE when knitting solutions
 ```
 
 1. This is question 1. Which might have some R code you always want to show.
-    `r ''````{r, include=TRUE}
+    ```{r, include=TRUE}
     # example code for the question
     ```
     
-    `r ''````{asis}
+    ```{asis}
     Paragraph text for the solution can be kept in the document in an `asis` chunk. 
     And solution R code in an `r` chunk. 
     Both of these will use the `include` value from the `setup` chunk.
     ```
     
-    `r ''````{r}
+    ```{r}
     # example code for the solution
     ```
 
@@ -49,8 +49,8 @@ knitr::opts_chunk$set(include = FALSE) # change to TRUE when knitting solutions
 ````
 
 To render the solutions output file we run the file with the following code.
-````md
-`r ''````{r setup, include=FALSE}
+````{verbatim}
+```{r setup, include=FALSE}
 knitr::opts_chunk$set(include = TRUE)
 ```
 ````
@@ -59,7 +59,7 @@ knitr::opts_chunk$set(include = TRUE)
 
 Instead of changing the `include` option in the setup chunk in the YAML header we can specify a `params` parameter with name of our choosing and pass it to `knitr::opts_chunk(include)` as follows.
 
-````md
+````{verbatim}
 ---
 title: "Example exercise"
 output: html_document
@@ -67,7 +67,7 @@ params:
   solutions: FALSE
 ---
 
-```{r setup, include=FALSE}`r ''`
+```{r setup, include=FALSE}
 knitr::opts_chunk$set(include = params$solutions)
 ```
 ````
