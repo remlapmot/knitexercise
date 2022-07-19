@@ -4,7 +4,7 @@ Title: Knit Exercise Questions and Solutions from the Same R Markdown Document
 Version: 0.1.0
 Authors@R: person("Tom", 
 									"Palmer", 
-									email = "tom.palmer@bristol.ac.uk",
+									email = "remlapmot@hotmail.com",
                   role = c("aut", "cre"), 
                   comment = c(ORCID = "0000-0003-4655-4511"))
 Description: Provides a function to knit questions and solutions documents from the same
