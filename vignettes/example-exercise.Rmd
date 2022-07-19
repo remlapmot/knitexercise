@@ -92,6 +92,6 @@ knit: knitexercise::knit_exercise
 ---
 ```
 
-This function sets `knitr::opts_chunk(include)`. If knitting with the Knit button, when `solutions:` is set to `TRUE` it adds `-solutions` to the end of the output filename before the file extension.
+This function sets `knitr::opts_chunk(include)`. If knitting with the Knit button, when `solutions:` is set to `TRUE` it adds the suffix `-solutions` to the output filename before the file extension.
 
 Customising the Knit button is described by Yihui Xie [here](https://bookdown.org/yihui/rmarkdown-cookbook/custom-knit.html).
