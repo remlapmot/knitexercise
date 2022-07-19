@@ -96,50 +96,50 @@
 <h2 id="a-simple-example-rmd-file">A simple example Rmd file<a class="anchor" aria-label="anchor" href="#a-simple-example-rmd-file"></a>
 </h2>
 <p>Therefore a simple <code>.Rmd</code> file might be the following.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>title: "Example exercise"</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>output: html_document</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>```{r setup, include=FALSE}</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>knitr::opts_chunk$set(include = FALSE) # change to TRUE when knitting solutions</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>```</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>1. This is question 1. Which might have some R code you always want to show.</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    ```{r, include=TRUE}</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    # example code for the question</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    ```</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    ```{asis}</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    Paragraph text for the solution can be kept in the document in an `asis` chunk. </span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    And solution R code in an `r` chunk. </span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    Both of these will use the `include` value from the `setup` chunk.</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    ```</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    ```{r}</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    # example code for the solution</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    ```</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>2. This is question 2.</span></code></pre></div>
+<pre class="rmarkdown"><code>---
+title: "Example exercise"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(include = FALSE) # change to TRUE when knitting solutions
+```
+
+1. This is question 1. Which might have some R code you always want to show.
+    ```{r, include=TRUE}
+    # example code for the question
+    ```
+    
+    ```{asis}
+    Paragraph text for the solution can be kept in the document in an `asis` chunk. 
+    And solution R code in an `r` chunk. 
+    Both of these will use the `include` value from the `setup` chunk.
+    ```
+    
+    ```{r}
+    # example code for the solution
+    ```
+
+2. This is question 2.</code></pre>
 <p>To render the solutions output file we run the file with the following code.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>```{r setup, include=FALSE}</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>knitr::opts_chunk$set(include = TRUE)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>```</span></code></pre></div>
+<pre class="rmarkdown"><code>```{r setup, include=FALSE}
+knitr::opts_chunk$set(include = TRUE)
+```</code></pre>
 </div>
 <div class="section level2">
 <h2 id="parameterising-our-rmd-file">Parameterising our Rmd file<a class="anchor" aria-label="anchor" href="#parameterising-our-rmd-file"></a>
 </h2>
 <p>Instead of changing the <code>include</code> option in the setup chunk in the YAML header we can specify a <code>params</code> parameter with name of our choosing and pass it to <code>knitr::opts_chunk(include)</code> as follows.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>title: "Example exercise"</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>output: html_document</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>params:</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  solutions: FALSE</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>```{r setup, include=FALSE}</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>knitr::opts_chunk$set(include = params$solutions)</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>```</span></code></pre></div>
+<pre class="rmarkdown"><code>---
+title: "Example exercise"
+output: html_document
+params:
+  solutions: FALSE
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(include = params$solutions)
+```</code></pre>
 </div>
 <div class="section level2">
 <h2 id="customising-the-rstudio-knit-button">Customising the RStudio Knit button<a class="anchor" aria-label="anchor" href="#customising-the-rstudio-knit-button"></a>
