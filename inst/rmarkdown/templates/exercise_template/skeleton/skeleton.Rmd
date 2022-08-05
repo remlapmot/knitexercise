@@ -14,7 +14,7 @@ comment out the following example code. -->
 
 - When knitting the questions, set `solutions: FALSE` in the YAML header.
 - When knitting the solutions, set `solutions: TRUE` in the YAML header.
-- If using the Knit button in RStudio the output filename will have `-solutions` appended before the file extension.
+- If using the Knit button in RStudio with `solutions: TRUE` the output filename will have `-solutions` appended before the file extension.
 
 1. This is an example question. It contains some R code which is always included in the output document with the chunk option `include=TRUE`.
     ```{r, include=TRUE}
