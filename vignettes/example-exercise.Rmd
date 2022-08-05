@@ -20,7 +20,7 @@ We suppress or show the solutions with the knitr global document `include` chunk
 
 Therefore a simple `.Rmd` file might be the following.
 
-````{verbatim, lang="rmarkdown"}
+````{verbatim}
 ---
 title: "Example exercise"
 output: html_document
@@ -49,7 +49,7 @@ knitr::opts_chunk$set(include = FALSE) # change to TRUE when knitting solutions
 ````
 
 To render the solutions output file we run the file with the following code.
-````{verbatim, lang="rmarkdown"}
+````{verbatim}
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(include = TRUE)
 ```
@@ -59,7 +59,7 @@ knitr::opts_chunk$set(include = TRUE)
 
 Instead of changing the `include` option in the setup chunk in the YAML header we can specify a `params` parameter with name of our choosing and pass it to `knitr::opts_chunk(include)` as follows.
 
-````{verbatim, lang="rmarkdown"}
+````{verbatim}
 ---
 title: "Example exercise"
 output: html_document
