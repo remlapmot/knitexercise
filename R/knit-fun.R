@@ -26,7 +26,7 @@
 #'
 #' @param inputFile The name of the R Markdown file to be rendered.
 #'
-#' @param encoding As per `rmarkdown::render_site()` this is Ignored.
+#' @param encoding As per `rmarkdown::render_site()` this is ignored.
 #' The encoding is always assumed to be UTF-8.
 #'
 #' @examples
