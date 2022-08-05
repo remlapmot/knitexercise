@@ -31,7 +31,7 @@
 #'
 #' @examples
 #' \dontrun{
-#' # To launch the template issue
+#' # To launch the R Markdown template run
 #' rmarkdown::draft('exercise.Rmd', template = 'exercise_template', package = 'knitexercise')
 #' }
 #'
