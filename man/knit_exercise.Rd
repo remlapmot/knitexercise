@@ -9,7 +9,7 @@ knit_exercise(inputFile, encoding)
 \arguments{
 \item{inputFile}{The name of the R Markdown file to be rendered.}
 
-\item{encoding}{As per \code{rmarkdown::render_site()} this is Ignored.
+\item{encoding}{As per \code{rmarkdown::render_site()} this is ignored.
 The encoding is always assumed to be UTF-8.}
 }
 \description{
@@ -37,7 +37,7 @@ This function also sets the global chunk option \code{include} to the value spec
 }
 \examples{
 \dontrun{
-# To launch the template issue
+# To launch the R Markdown template run
 rmarkdown::draft('exercise.Rmd', template = 'exercise_template', package = 'knitexercise')
 }
 
