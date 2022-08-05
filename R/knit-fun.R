@@ -32,7 +32,9 @@
 #' @examples
 #' \dontrun{
 #' # To launch the R Markdown template run
-#' rmarkdown::draft('exercise.Rmd', template = 'exercise_template', package = 'knitexercise')
+#' rmarkdown::draft('exercise.Rmd', 
+#'                  template = 'exercise_template', 
+#'                  package = 'knitexercise')
 #' }
 #'
 #' @export
