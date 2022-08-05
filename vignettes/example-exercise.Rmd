@@ -99,7 +99,7 @@ quarto::quarto_render("skeleton.qmd", execute_params = list(solutions = "FALSE")
 
 The **knitexercise** package provides the `knit_exercise()` function to customise the Knit button.
 
-You specify it in the YAML header as follows.
+It is specified in the YAML header as follows.
 ```yaml
 ---
 title: "Example exercise"
