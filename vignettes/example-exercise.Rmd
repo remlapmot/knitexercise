@@ -94,6 +94,10 @@ Or rendering using the quarto package we can change the parameters as follows.
 quarto::quarto_render("exercise.qmd", execute_params = list(solutions = "TRUE"))
 quarto::quarto_render("exercise.qmd", execute_params = list(solutions = "FALSE"))
 ```
+
+The parameters can also be passed to `rmarkdown::render()` as follows.
+```r
+rmarkdown::render("exercise.Rmd", params = list(solutions = FALSE))
 ```
 
 ## Customising the RStudio Knit button
