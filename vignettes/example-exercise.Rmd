@@ -72,6 +72,7 @@ params:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(include = params$solutions)
 ```
+<!-- ...Rest of document... -->
 ````
 
 ## Customising the RStudio Knit button
