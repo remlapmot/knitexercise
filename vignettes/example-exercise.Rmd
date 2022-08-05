@@ -89,6 +89,11 @@ or as follows if `params.yml` contains `solutions: TRUE`.
 quarto render exercise.qmd --execute-params params.yml
 ```
 
+Or rendering using the quarto package we can change the parameters as follows.
+```r
+quarto::quarto_render("exercise.qmd", execute_params = list(solutions = TRUE))
+```
+
 ## Customising the RStudio Knit button
 
 The **knitexercise** package provides the `knit_exercise()` function to customise the Knit button.
