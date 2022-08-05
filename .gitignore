@@ -9,4 +9,8 @@ doc
 .DS_Store
 inst/doc
 docs/
+
+# Local directories containing test Rmd/Qmd files
 my_exercise/
+exercise/
+practical/
