@@ -55,6 +55,8 @@ knitr::opts_chunk$set(include = TRUE)
 ```
 ````
 
+This approach of using `knitr::oprs_chunk$set()` also works in a Quarto document using the Knitr engine.
+
 ## Parameterising our Rmd file
 
 Instead of changing the `include` option in the setup chunk in the YAML header we can specify a `params` parameter with name of our choosing and pass it to `knitr::opts_chunk(include)` as follows.
