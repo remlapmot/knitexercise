@@ -15,7 +15,7 @@ For your output document with your solutions set \code{solutions: TRUE}.
 
 Your YAML header should look something like the following.
 
-\if{html}{\out{<div class="sourceCode">}}\preformatted{---
+\if{html}{\out{<div class="sourceCode yaml">}}\preformatted{---
 title: My Title
 author: My Name
 params:
@@ -28,9 +28,12 @@ output: html_document
 For your solutions output document \code{-solutions} is added to the filename before
 the file extension.
 
-There is a template R Markdown document which you can open through the:
-\emph{File | New File | R Markdown... | From Template} menu or with the following code.
+There is a template R Markdown document which you can open through the
+following menu: \emph{File | New File | R Markdown... | From Template},
+or with the following code.
 
-\if{html}{\out{<div class="sourceCode">}}\preformatted{rmarkdown::draft("my_exercise.Rmd", template = "exercise_template", package = "knitexercise")
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{rmarkdown::draft("my_exercise.Rmd", 
+                 template = "exercise_template", 
+                 package = "knitexercise")
 }\if{html}{\out{</div>}}
 }
