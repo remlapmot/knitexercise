@@ -1,6 +1,6 @@
 ---
 title: "Exercise"
-author: 
+author: "Your Name"
 date: '`r Sys.Date()`'
 params:
   solutions: FALSE
