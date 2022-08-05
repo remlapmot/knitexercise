@@ -2,7 +2,7 @@
 #'
 #' This function adds `-solution` to the end of the filename before the file extension
 #' of the output document from your R Markdown document when rendered by clicking the
-#' Knit button in RStudio and when you have set `solution: TRUE` in the `params:` field
+#' Knit button in RStudio and when you have set `solutions: TRUE` in the `params:` field
 #' of your YAML header.
 #'
 #' This function is used with the `knit:` field of the YAML header of an R Markdown file.
