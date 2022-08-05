@@ -1,4 +1,4 @@
-name: Exercise including questions and solutions
+name: Generating questions and solutions documents as output documents from the same R Markdown document
 description: >
   Template for creating an exercise for rendering questions and
   solutions documents from the same R Markdown document.
