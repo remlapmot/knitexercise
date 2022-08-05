@@ -22,10 +22,11 @@
 #' For your solutions output document `-solutions` is added to the filename before
 #' the file extension.
 #'
-#' There is a template R Markdown document which you can open through the:
-#' *File | New File | R Markdown... | From Template* menu or with the following code.
 #' ```
 #' rmarkdown::draft("my_exercise.Rmd", template = "exercise_template", package = "knitexercise")
+#' There is a template R Markdown document which you can open through the 
+#' following menu: *File | New File | R Markdown... | From Template*, 
+#' or with the following code.
 #' ```
 #'
 #' @name knitexercise-package
