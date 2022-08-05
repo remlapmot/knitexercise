@@ -8,7 +8,7 @@
 #' For your output document with your solutions set `solutions: TRUE`.
 #'
 #' Your YAML header should look something like the following.
-#' ```
+#' ```yaml
 #' ---
 #' title: My Title
 #' author: My Name
