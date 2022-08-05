@@ -75,6 +75,20 @@ knitr::opts_chunk$set(include = params$solutions)
 <!-- ...Rest of document... -->
 ````
 
+Quarto documents can also use the same parameterisation.
+Further with Quarto the parameters can be changed as arguments to the command
+line interface or input in a `params.yml` file as described
+[here](https://quarto.org/docs/computations/parameters.html).
+
+For example we may invoke the Quarto CLI as 
+```
+quarto render exercise.qmd -P solutions:TRUE
+```
+or as follows if `params.yml` contains `solutions: TRUE`.
+```
+quarto render exercise.qmd --execute-params params.yml
+```
+
 ## Customising the RStudio Knit button
 
 The **knitexercise** package provides the `knit_exercise()` function to customise the Knit button.
