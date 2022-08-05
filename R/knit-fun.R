@@ -7,7 +7,7 @@
 #'
 #' This function is used with the `knit:` field of the YAML header of an R Markdown file.
 #' For example, if you want pdf output the YAML header would be as follows.
-#' ```
+#' ```yaml
 #' ---
 #' title: My Title
 #' params:
