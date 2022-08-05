@@ -15,3 +15,5 @@ cran-comments.md
 ^.github$
 ^\.github$
 ^my_exercise$
+^practical$
+^exercise$
