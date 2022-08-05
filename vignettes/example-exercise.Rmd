@@ -12,9 +12,9 @@ vignette: >
 
 This package provides a simple extra helper function when knitting an `.Rmd` file in which we have questions and solutions.
 
-We ensure elements which are questions are either included as Rmarkdown text or as code chunk with `include=TRUE`.
+We ensure elements which are questions are either included as R Markdown text or as code chunk with `include=TRUE`.
 
-We suppress or show the solutions with the knitr global document `include` chunk option controlled by `knitr::opts_chunk$set(include)`. And paragraph Rmarkdown text for the solutions is included in an `asis` code chunk.
+We suppress or show the solutions with the knitr global document `include` chunk option controlled by `knitr::opts_chunk$set(include)`. And paragraph R Markdown text for the solutions is included in an `asis` code chunk.
 
 ## A simple example Rmd file
 
