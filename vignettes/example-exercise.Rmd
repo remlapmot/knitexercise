@@ -1,5 +1,5 @@
 ---
-title: "Generating questions and solutions documents from the same R Markdown document"
+title: "Generating questions and solutions documents from the same R Markdown or Quarto document"
 output:
   rmarkdown::html_vignette
 vignette: >
