@@ -55,7 +55,7 @@ knitr::opts_chunk$set(include = FALSE) # change to TRUE when knitting solutions
 2. This is question 2.
 ````
 
-To render the solutions output file we run the file with the following code.
+To render the solutions output file change the setting for `include` within the setup chunk.
 ````{verbatim}
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(include = TRUE)
