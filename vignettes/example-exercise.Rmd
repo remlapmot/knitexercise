@@ -71,6 +71,7 @@ Instead of changing the `include` option in the setup chunk in the YAML header w
 ````{verbatim}
 ---
 title: "Example exercise"
+author: "My Name"
 output: html_document
 params:
   solutions: FALSE
