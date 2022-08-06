@@ -91,6 +91,8 @@ rmarkdown::render("exercise.Rmd",
                   params = list(solutions = TRUE))
 ```
 
+### Parameterising a Quarto document
+
 Quarto documents can also use the same parameterisation.
 Further with Quarto the parameters can be changed as arguments to the command
 line interface or input in a `params.yml` file as described
