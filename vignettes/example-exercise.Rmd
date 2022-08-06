@@ -38,19 +38,19 @@ knitr::opts_chunk$set(include = FALSE) # change to TRUE when knitting solutions
 ```
 
 1. This is question 1. Which might have some R code you always want to show.
-    ```{r, include=TRUE}
-    # example code for the question
-    ```
+   ```{r, include=TRUE}
+   # example code for the question
+   ```
+
+   ```{asis}
+   Paragraph text for the solution can be kept in the document in an `asis` chunk.
+   And solution R code in an `r` chunk.
+   Both of these will use the `include` value from the `setup` chunk.
+   ```
     
-    ```{asis}
-    Paragraph text for the solution can be kept in the document in an `asis` chunk. 
-    And solution R code in an `r` chunk. 
-    Both of these will use the `include` value from the `setup` chunk.
-    ```
-    
-    ```{r}
-    # example code for the solution
-    ```
+   ```{r}
+   # example code for the solution
+   ```
 
 2. This is question 2.
 ````
