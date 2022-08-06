@@ -29,6 +29,7 @@ Therefore a simple `.Rmd` file might be the following.
 ````{verbatim}
 ---
 title: "Example exercise"
+author: "My Name"
 output: html_document
 ---
 
