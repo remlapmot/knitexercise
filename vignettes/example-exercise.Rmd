@@ -115,9 +115,8 @@ quarto::quarto_render("exercise.qmd", execute_params = list(solutions = "FALSE")
 
 ## Customising the RStudio Knit button
 
-The **knitexercise** package provides the `knit_exercise()` function to customise the Knit button.
-
-It is specified in the YAML header as follows.
+The **knitexercise** package provides the `knit_exercise()` function to customise the _Knit_ button in the RStudio Source pane.
+Its use is specified in the YAML header of the Rmd file as follows.
 ```yaml
 ---
 title: "Example exercise"
@@ -128,6 +127,6 @@ knit: knitexercise::knit_exercise
 ---
 ```
 
-This function sets `knitr::opts_chunk(include)`. If knitting with the Knit button, when `solutions:` is set to `TRUE` it adds the suffix `-solutions` to the output filename before the file extension.
+This function sets `knitr::opts_chunk(include)`. If knitting with the _Knit_ button, when `solutions:` is set to `TRUE` it adds the suffix `-solutions` to the output filename before the file extension.
 
 Customising the Knit button is described by Yihui Xie [here](https://bookdown.org/yihui/rmarkdown-cookbook/custom-knit.html).
