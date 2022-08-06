@@ -83,6 +83,14 @@ knitr::opts_chunk$set(include = params$solutions)
 <!-- ...Rest of document... -->
 ````
 
+To generate both questions and solutions output documents from the single Rmd file we could run the following code at an R prompt.
+```r
+rmarkdown::render("exercise.Rmd", params = list(solutions = FALSE))
+rmarkdown::render("exercise.Rmd", 
+                  output_file = "exercise-solutions", 
+                  params = list(solutions = TRUE))
+```
+
 Quarto documents can also use the same parameterisation.
 Further with Quarto the parameters can be changed as arguments to the command
 line interface or input in a `params.yml` file as described
@@ -101,11 +109,6 @@ Or rendering using the quarto package we can change the parameters as follows.
 ```r
 quarto::quarto_render("exercise.qmd", execute_params = list(solutions = "TRUE"))
 quarto::quarto_render("exercise.qmd", execute_params = list(solutions = "FALSE"))
-```
-
-The parameters can also be passed to `rmarkdown::render()` as follows.
-```r
-rmarkdown::render("exercise.Rmd", params = list(solutions = FALSE))
 ```
 
 ## Customising the RStudio Knit button
