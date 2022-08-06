@@ -94,20 +94,20 @@ rmarkdown::render("exercise.Rmd",
 ### Parameterising a Quarto document
 
 Quarto documents can also use the same parameterisation.
-Further with Quarto the parameters can be changed as arguments to the command
+The parameters can be changed as arguments to the command
 line interface or input in a `params.yml` file as described
 [here](https://quarto.org/docs/computations/parameters.html).
 
-For example we may invoke the Quarto CLI as 
 ```
+For example, we may invoke the Quarto CLI as follows.
 quarto render exercise.qmd -P solutions:TRUE
 ```
-or as follows if `params.yml` contains `solutions: TRUE`.
 ```
+Or as follows if `params.yml` contains the line `solutions: TRUE`.
 quarto render exercise.qmd --execute-params params.yml
 ```
 
-Or rendering using the quarto package we can change the parameters as follows.
+Or rendering using the **quarto** R package we can change the parameters as follows.
 ```r
 quarto::quarto_render("exercise.qmd", execute_params = list(solutions = "TRUE"))
 quarto::quarto_render("exercise.qmd", execute_params = list(solutions = "FALSE"))
