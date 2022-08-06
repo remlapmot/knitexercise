@@ -3,7 +3,7 @@ title: "Generating questions and solutions documents from the same R Markdown or
 output:
   rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Generating questions and solutions documents from the same R Markdown document}
+  %\VignetteIndexEntry{Generating questions and solutions documents from the same R Markdown or Quarto document}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
