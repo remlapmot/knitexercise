@@ -98,12 +98,12 @@ The parameters can be changed as arguments to the command
 line interface or input in a `params.yml` file as described
 [here](https://quarto.org/docs/computations/parameters.html).
 
-```
 For example, we may invoke the Quarto CLI as follows.
+```bash
 quarto render exercise.qmd -P solutions:TRUE
 ```
-```
 Or as follows if `params.yml` contains the line `solutions: TRUE`.
+```bash
 quarto render exercise.qmd --execute-params params.yml
 ```
 
