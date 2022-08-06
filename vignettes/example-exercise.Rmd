@@ -62,7 +62,7 @@ knitr::opts_chunk$set(include = TRUE)
 ```
 ````
 
-This approach of using `knitr::oprs_chunk$set()` also works in a Quarto document using the Knitr engine.
+Setting the global `include` chunk option also works in a Quarto document using the Knitr engine.
 
 ## Parameterising our Rmd file
 
