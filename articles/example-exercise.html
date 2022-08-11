@@ -162,24 +162,28 @@
 <div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render exercise.qmd <span class="at">-P</span> solutions:TRUE</span></code></pre></div>
 <p>Or as follows if <code>params.yml</code> contains the line <code>solutions: TRUE</code>.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render exercise.qmd <span class="at">--execute-params</span> params.yml</span></code></pre></div>
-<p>Or rendering using the <strong>quarto</strong> R package we can change the parameters as follows.</p>
+<p>Or rendering using the <strong>quarto</strong> R package we can change the parameters as follows. To generate the questions output document we run.</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">quarto</span><span class="fu">::</span><span class="fu">quarto_render</span><span class="op">(</span><span class="st">"exercise.qmd"</span>, execute_params <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>solutions <span class="op">=</span> <span class="st">"TRUE"</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="fu">quarto</span><span class="fu">::</span><span class="fu">quarto_render</span><span class="op">(</span><span class="st">"exercise.qmd"</span>, execute_params <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>solutions <span class="op">=</span> <span class="st">"FALSE"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">quarto</span><span class="fu">::</span><span class="fu">quarto_render</span><span class="op">(</span><span class="st">"exercise.qmd"</span>, execute_params <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>solutions <span class="op">=</span> <span class="st">"FALSE"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p>And to generate the solutions output document we could run.</p>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">quarto</span><span class="fu">::</span><span class="fu">quarto_render</span><span class="op">(</span><span class="st">"exercise.qmd"</span>, </span>
+<span>                      output_file <span class="op">=</span> <span class="st">"exercise-solutions.html"</span>,</span>
+<span>                      execute_params <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>solutions <span class="op">=</span> <span class="st">"TRUE"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 </div>
 </div>
 <div class="section level2">
 <h2 id="customising-the-rstudio-knit-button">Customising the RStudio Knit button<a class="anchor" aria-label="anchor" href="#customising-the-rstudio-knit-button"></a>
 </h2>
 <p>The <strong>knitexercise</strong> package provides the <code><a href="../reference/knit_exercise.html">knit_exercise()</a></code> function to customise the <em>Knit</em> button in the RStudio Source pane. Its use is specified in the YAML header of the Rmd file as follows.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Example exercise"</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"My Name"</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> html_document</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">params</span><span class="kw">:</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">solutions</span><span class="kw">:</span><span class="at"> </span><span class="ch">FALSE</span></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="fu">knit</span><span class="kw">:</span><span class="at"> knitexercise::knit_exercise</span></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Example exercise"</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"My Name"</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> html_document</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="fu">params</span><span class="kw">:</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">solutions</span><span class="kw">:</span><span class="at"> </span><span class="ch">FALSE</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="fu">knit</span><span class="kw">:</span><span class="at"> knitexercise::knit_exercise</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
 <p>This function sets <code>knitr::opts_chunk(include)</code>. If knitting with the <em>Knit</em> button, when <code>solutions:</code> is set to <code>TRUE</code> it adds the suffix <code>-solutions</code> to the output filename before the file extension.</p>
 <p>Customising the Knit button is described by Yihui Xie <a href="https://bookdown.org/yihui/rmarkdown-cookbook/custom-knit.html" class="external-link">here</a>.</p>
 </div>
