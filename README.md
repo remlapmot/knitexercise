@@ -2,6 +2,7 @@
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/remlapmot/knitexercise/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/remlapmot/knitexercise/actions/workflows/R-CMD-check.yaml)
+[![r-universe](https://remlapmot.r-universe.dev/badges/knitexercise)](https://remlapmot.r-universe.dev/knitexercise)
 <!-- badges: end -->
   
 This is a simple package which provides a custom knit function, `knit_exercise`, to knit separate questions and answers output documents from the same R Markdown file.
