@@ -9,12 +9,16 @@ This is a simple package which provides a custom knit function, `knit_exercise`,
 
 ## Installation
 
-You can install the package from GitHub with:
+You can install **knitexercise** as a binary package from r-universe with
+``` r
+install.packages('knitexercise', repos = c('https://remlapmot.r-universe.dev', 'https://cloud.r-project.org'))
+```
+
+Or you can install the package from source from GitHub with:
 ``` r
 if (!requireNamespace("remotes")) install.packages("remotes")
 remotes::install_github("remlapmot/knitexercise")
 ```
-To update the package, simply run the `remotes::install_github()` command again.
 
 ## Usage
 There is a template provided which you can launch through the 
