@@ -2,16 +2,17 @@
 % Please edit documentation in R/knitexercise-package.r
 \docType{package}
 \name{knitexercise-package}
+\alias{knitexercise}
 \alias{knitexercise-package}
 \title{knitexercise: Knit exercise questions and solutions from the same R Markdown document}
 \description{
-This package provides a custom knit function, \code{knit_exercise}, which sets the global
+This package provides a custom knit function, \code{knit_exercise()}, which sets the global
 chunk option \code{include}. This is controlled by setting the \code{solutions} parameter in
 the YAML header of the R Markdown document.
 }
 \details{
-Hence to generate your output document with questions set \code{solutions: FALSE}.
-For your output document with your solutions set \code{solutions: TRUE}.
+To generate your output document with questions set \code{solutions: FALSE}.
+For your output document containing the solutions set \code{solutions: TRUE}.
 
 Your YAML header should look something like the following.
 
@@ -29,11 +30,27 @@ For your solutions output document \code{-solutions} is added to the filename be
 the file extension.
 
 There is a template R Markdown document which you can open through the
-following menu: \emph{File | New File | R Markdown... | From Template},
+following menu in RStudio: \emph{File | New File | R Markdown... | From Template},
 or with the following code.
 
-\if{html}{\out{<div class="sourceCode r">}}\preformatted{rmarkdown::draft("my_exercise.Rmd", 
-                 template = "exercise_template", 
-                 package = "knitexercise")
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{rmarkdown::draft(
+  "my_exercise.Rmd",
+  template = "exercise_template",
+  package = "knitexercise"
+)
 }\if{html}{\out{</div>}}
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/remlapmot/knitexercise}
+  \item \url{https://remlapmot.github.io/knitexercise/}
+  \item Report bugs at \url{https://github.com/remlapmot/knitexercise/issues}
+}
+
+}
+\author{
+\strong{Maintainer}: Tom Palmer \email{remlapmot@hotmail.com} (\href{https://orcid.org/0000-0003-4655-4511}{ORCID})
+
+}
+\keyword{internal}

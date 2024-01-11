@@ -13,7 +13,7 @@ knit_exercise(inputFile, encoding)
 The encoding is always assumed to be UTF-8.}
 }
 \description{
-This function adds \code{-solution} to the end of the filename before the file extension
+This function adds \code{-solutions} to the end of the filename before the file extension
 of the output document from your R Markdown document when rendered by clicking the
 Knit button in RStudio and when you have set \code{solutions: TRUE} in the \verb{params:} field
 of your YAML header.
@@ -38,9 +38,10 @@ This function also sets the global chunk option \code{include} to the value spec
 \examples{
 \dontrun{
 # To launch the R Markdown template run
-rmarkdown::draft('exercise.Rmd', 
-                 template = 'exercise_template', 
-                 package = 'knitexercise')
+rmarkdown::draft(
+  'exercise.Rmd',
+   template = 'exercise_template',
+   package = 'knitexercise')
 }
 
 }
