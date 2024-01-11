@@ -1,6 +1,6 @@
 #' Custom Knit function for RStudio
 #'
-#' This function adds `-solution` to the end of the filename before the file extension
+#' This function adds `-solutions` to the end of the filename before the file extension
 #' of the output document from your R Markdown document when rendered by clicking the
 #' Knit button in RStudio and when you have set `solutions: TRUE` in the `params:` field
 #' of your YAML header.
@@ -32,9 +32,10 @@
 #' @examples
 #' \dontrun{
 #' # To launch the R Markdown template run
-#' rmarkdown::draft('exercise.Rmd', 
-#'                  template = 'exercise_template', 
-#'                  package = 'knitexercise')
+#' rmarkdown::draft(
+#'   'exercise.Rmd',
+#'    template = 'exercise_template',
+#'    package = 'knitexercise')
 #' }
 #'
 #' @export
