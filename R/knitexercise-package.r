@@ -31,6 +31,5 @@
 #'                  package = "knitexercise")
 #' ```
 #'
-#' @name knitexercise-package
-#' @docType package
-NULL
+#' @keywords internal
+"_PACKAGE"
