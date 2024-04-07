@@ -53,4 +53,3 @@ Useful links:
 \strong{Maintainer}: Tom Palmer \email{remlapmot@hotmail.com} (\href{https://orcid.org/0000-0003-4655-4511}{ORCID})
 
 }
-\keyword{internal}
