@@ -33,5 +33,4 @@
 #' )
 #' ```
 #'
-#' @keywords internal
 "_PACKAGE"
