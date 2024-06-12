@@ -2,7 +2,7 @@ Type: Package
 Package: knitexercise
 Title: Knit Exercise Questions and Solutions from the Same R Markdown
     Document
-Version: 0.3.0
+Version: 0.4.0
 Authors@R: 
     person("Tom", "Palmer", , "remlapmot@hotmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0003-4655-4511"))

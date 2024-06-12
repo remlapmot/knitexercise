@@ -1,3 +1,7 @@
+# knitexercise 0.4.0
+
+* **knitexercise** now requires the minimum version of R to be R 4.0.0 (because a dependency **knitr**, **evaluate**, now has this requirement)
+
 # knitexercise 0.3.0
 
 * Bump version of **roxygen2** used to create the package documentation
