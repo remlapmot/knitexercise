@@ -1,3 +1,5 @@
 url: https://remlapmot.github.io/knitexercise/
 template:
   bootstrap: 5
+template:
+  light-switch: true
