@@ -1,6 +1,6 @@
 # knitexercise 0.4.1
 
-* Bump version of roxygen2 package used to generate package documentation
+* Bump version of **roxygen2** package used to generate package documentation
 
 # knitexercise 0.4.0
 
