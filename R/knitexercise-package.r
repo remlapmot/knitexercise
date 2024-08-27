@@ -22,8 +22,8 @@
 #' For your solutions output document `-solutions` is added to the filename before
 #' the file extension.
 #'
-#' There is a template R Markdown document which you can open through the 
-#' following menu in RStudio: *File | New File | R Markdown... | From Template*, 
+#' There is a template R Markdown document which you can open through the
+#' following menu in RStudio: *File | New File | R Markdown... | From Template*,
 #' or with the following code.
 #' ```r
 #' rmarkdown::draft(
