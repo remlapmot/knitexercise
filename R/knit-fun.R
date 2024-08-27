@@ -45,8 +45,7 @@ knit_exercise <- function(inputFile, encoding) {
 			input       = inputFile,
 			encoding    = encoding,
 			output_file = paste0(substr(inputFile, 1, nchar(inputFile) - 4), '-solutions'))
-	}
-	else {
+	} else {
 		knitr::opts_chunk$set(include = solns); rmarkdown::render(
 			input       = inputFile,
 			encoding    = encoding)
