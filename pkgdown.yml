@@ -3,7 +3,7 @@ pkgdown: 2.1.0
 pkgdown_sha: ~
 articles:
   example-exercise: example-exercise.html
-last_built: 2024-08-27T20:29Z
+last_built: 2024-08-27T20:32Z
 urls:
   reference: https://remlapmot.github.io/knitexercise/reference
   article: https://remlapmot.github.io/knitexercise/articles
