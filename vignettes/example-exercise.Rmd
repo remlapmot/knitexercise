@@ -90,9 +90,10 @@ To generate both questions and solutions output documents from the single Rmd fi
 
 ```r
 rmarkdown::render("exercise.Rmd", params = list(solutions = FALSE))
-rmarkdown::render("exercise.Rmd", 
-                  output_file = "exercise-solutions", 
-                  params = list(solutions = TRUE))
+rmarkdown::render("exercise.Rmd",
+  output_file = "exercise-solutions",
+  params = list(solutions = TRUE)
+)
 ```
 
 ### Parameterising a Quarto document
@@ -123,9 +124,10 @@ quarto::quarto_render("exercise.qmd", execute_params = list(solutions = "FALSE")
 And to generate the solutions output document we could run.
 
 ```r
-quarto::quarto_render("exercise.qmd", 
-                      output_file = "exercise-solutions.html",
-                      execute_params = list(solutions = "TRUE"))
+quarto::quarto_render("exercise.qmd",
+  output_file = "exercise-solutions.html",
+  execute_params = list(solutions = "TRUE")
+)
 ```
 
 ## Customising the RStudio Knit button
