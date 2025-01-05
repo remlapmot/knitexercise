@@ -15,7 +15,7 @@ This package provides a simple extra helper function when knitting an `.Rmd` fil
 We ensure elements which are questions are either included as R Markdown text or from a code chunk with the chunk option `include=TRUE`.
 
 We suppress or show the solutions with the knitr global document `include` chunk option controlled by a setup chunk at the beginning of the document as follows
-````{verbatim}
+````{verbatim, lang = "markdown"}
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(include = FALSE) # set to TRUE for solutions document
 ```
@@ -26,7 +26,7 @@ Paragraph R Markdown text for the solutions is included in `asis` code chunks.
 
 Therefore a simple `.Rmd` file might be the following.
 
-````{verbatim}
+````{verbatim, lang = "markdown"}
 ---
 title: "Example exercise"
 author: "My Name"
@@ -56,7 +56,7 @@ knitr::opts_chunk$set(include = FALSE) # change to TRUE when knitting solutions
 ````
 
 To render the solutions output file change the setting for `include` within the setup chunk.
-````{verbatim}
+````{verbatim, lang = "markdown"}
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(include = TRUE)
 ```
@@ -68,7 +68,7 @@ Setting the global `include` chunk option also works in a Quarto document using 
 
 Instead of changing the `include` option in the setup chunk in the YAML header we can specify a `params` parameter with name of our choosing and pass it to `knitr::opts_chunk(include)` as follows.
 
-````{verbatim}
+````{verbatim, lang = "markdown"}
 ---
 title: "Example exercise"
 author: "My Name"
