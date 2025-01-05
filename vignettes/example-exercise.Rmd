@@ -15,11 +15,13 @@ This package provides a simple extra helper function when knitting an `.Rmd` fil
 We ensure elements which are questions are either included as R Markdown text or from a code chunk with the chunk option `include=TRUE`.
 
 We suppress or show the solutions with the knitr global document `include` chunk option controlled by a setup chunk at the beginning of the document as follows
+
 ````{verbatim, lang = "markdown"}
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(include = FALSE) # set to TRUE for solutions document
 ```
 ````
+
 Paragraph R Markdown text for the solutions is included in `asis` code chunks.
 
 ## A simple example Rmd file
@@ -56,6 +58,7 @@ knitr::opts_chunk$set(include = FALSE) # change to TRUE when knitting solutions
 ````
 
 To render the solutions output file change the setting for `include` within the setup chunk.
+
 ````{verbatim, lang = "markdown"}
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(include = TRUE)
@@ -84,6 +87,7 @@ knitr::opts_chunk$set(include = params$solutions)
 ````
 
 To generate both questions and solutions output documents from the single Rmd file we could run the following code at an R prompt.
+
 ```r
 rmarkdown::render("exercise.Rmd", params = list(solutions = FALSE))
 rmarkdown::render("exercise.Rmd", 
@@ -99,19 +103,25 @@ line interface or input in a `params.yml` file as described
 [here](https://quarto.org/docs/computations/parameters.html).
 
 For example, we may invoke the Quarto CLI as follows.
+
 ```bash
 quarto render exercise.qmd -P solutions:TRUE
 ```
+
 Or as follows if `params.yml` contains the line `solutions: TRUE`.
+
 ```bash
 quarto render exercise.qmd --execute-params params.yml
 ```
 
 Or rendering using the **quarto** R package we can change the parameters as follows. To generate the questions output document we run.
+
 ```r
 quarto::quarto_render("exercise.qmd", execute_params = list(solutions = "FALSE"))
 ```
+
 And to generate the solutions output document we could run.
+
 ```r
 quarto::quarto_render("exercise.qmd", 
                       output_file = "exercise-solutions.html",
@@ -122,6 +132,7 @@ quarto::quarto_render("exercise.qmd",
 
 The **knitexercise** package provides the `knit_exercise()` function to customise the _Knit_ button in the RStudio Source pane.
 Its use is specified in the YAML header of the Rmd file as follows.
+
 ```yaml
 ---
 title: "Example exercise"
