@@ -17,18 +17,19 @@ comment out the following example code. -->
 - If using the Knit button in RStudio with `solutions: TRUE` the output filename will have `-solutions` appended before the file extension.
 
 1. This is an example question. It contains some R code which is always included in the output document with the chunk option `include=TRUE`.
-    ```{r, include=TRUE}
-    1 + 1
-    ```
 
-    ```{asis}
-    Paragraph text for solutions is put in `asis` code chunks.
-    
-    R code chunks for solutions are put in standard `r` code chunks.
-    ```
+   ```{r, include=TRUE}
+   1 + 1
+   ```
 
-    ```{r}
-    1 + 1
-    ```
+   ```{asis}
+   Paragraph text for solutions is put in `asis` code chunks.
+   
+   R code chunks for solutions are put in standard `r` code chunks.
+   ```
+
+   ```{r}
+   1 + 1
+   ```
   
 2. This is question 2.
