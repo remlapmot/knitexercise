@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Generating questions and solutions documents from the same R Markdown or Quarto document • knitexercise</title>
-<script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<script src="../lightswitch.js"></script><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
 <script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
@@ -17,11 +17,11 @@
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
 
 
-    <nav class="navbar navbar-expand-lg fixed-top bg-light" data-bs-theme="light" aria-label="Site navigation"><div class="container">
+    <nav class="navbar navbar-expand-lg fixed-top " aria-label="Site navigation"><div class="container">
 
     <a class="navbar-brand me-2" href="../index.html">knitexercise</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.2</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,6 +44,14 @@
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json">
 </form></li>
 <li class="nav-item"><a class="external-link nav-link" href="https://github.com/remlapmot/knitexercise/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
+<li class="nav-item dropdown">
+  <button class="nav-link dropdown-toggle" type="button" id="dropdown-lightswitch" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true" aria-label="Light switch"><span class="fa fa-sun"></span></button>
+  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-lightswitch">
+<li><button class="dropdown-item" data-bs-theme-value="light"><span class="fa fa-sun"></span> Light</button></li>
+    <li><button class="dropdown-item" data-bs-theme-value="dark"><span class="fa fa-moon"></span> Dark</button></li>
+    <li><button class="dropdown-item" data-bs-theme-value="auto"><span class="fa fa-adjust"></span> Auto</button></li>
+  </ul>
+</li>
       </ul>
 </div>
 
@@ -60,7 +68,7 @@
       <h1>Generating questions and solutions documents from the same R Markdown or Quarto document</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/remlapmot/knitexercise/blob/v0.4.1/vignettes/example-exercise.Rmd" class="external-link"><code>vignettes/example-exercise.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/remlapmot/knitexercise/blob/master/vignettes/example-exercise.Rmd" class="external-link"><code>vignettes/example-exercise.Rmd</code></a></small>
       <div class="d-none name"><code>example-exercise.Rmd</code></div>
     </div>
 
@@ -77,9 +85,9 @@ Markdown text or from a code chunk with the chunk option
 <p>We suppress or show the solutions with the knitr global document
 <code>include</code> chunk option controlled by a setup chunk at the
 beginning of the document as follows</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>```{r setup, include=FALSE}</span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>knitr::opts_chunk$set(include = FALSE) # set to TRUE for solutions document</span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>```</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="in">```{r setup, include=FALSE}</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="in">knitr::opts_chunk$set(include = FALSE) # set to TRUE for solutions document</span></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
 <p>Paragraph R Markdown text for the solutions is included in
 <code>asis</code> code chunks.</p>
 </div>
@@ -87,37 +95,37 @@ beginning of the document as follows</p>
 <h2 id="a-simple-example-rmd-file">A simple example Rmd file<a class="anchor" aria-label="anchor" href="#a-simple-example-rmd-file"></a>
 </h2>
 <p>Therefore a simple <code>.Rmd</code> file might be the following.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>---</span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>title: "Example exercise"</span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>author: "My Name"</span>
-<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>output: html_document</span>
-<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>---</span>
+<div class="sourceCode" id="cb2"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Example exercise"</span></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="an">author:</span><span class="co"> "My Name"</span></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="an">output:</span><span class="co"> html_document</span></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a>```{r setup, include=FALSE}</span>
-<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a>knitr::opts_chunk$set(include = FALSE) # change to TRUE when knitting solutions</span>
-<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a>```</span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a><span class="in">```{r setup, include=FALSE}</span></span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="in">knitr::opts_chunk$set(include = FALSE) # change to TRUE when knitting solutions</span></span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a>1. This is question 1. Which might have some R code you always want to show.</span>
-<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a>   ```{r, include=TRUE}</span>
-<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a>   # example code for the question</span>
-<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a>   ```</span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a><span class="ss">1. </span>This is question 1. Which might have some R code you always want to show.</span>
+<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a>   <span class="in">```{r, include=TRUE}</span></span>
+<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a><span class="in">   # example code for the question</span></span>
+<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a><span class="in">   ```</span></span>
 <span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a></span>
-<span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a>   ```{asis}</span>
-<span id="cb2-17"><a href="#cb2-17" tabindex="-1"></a>   Paragraph text for the solution can be kept in the document in an `asis` chunk.</span>
-<span id="cb2-18"><a href="#cb2-18" tabindex="-1"></a>   And solution R code in an `r` chunk.</span>
-<span id="cb2-19"><a href="#cb2-19" tabindex="-1"></a>   Both of these will use the `include` value from the `setup` chunk.</span>
-<span id="cb2-20"><a href="#cb2-20" tabindex="-1"></a>   ```</span>
+<span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a>   <span class="in">```{asis}</span></span>
+<span id="cb2-17"><a href="#cb2-17" tabindex="-1"></a><span class="in">   Paragraph text for the solution can be kept in the document in an `asis` chunk.</span></span>
+<span id="cb2-18"><a href="#cb2-18" tabindex="-1"></a><span class="in">   And solution R code in an `r` chunk.</span></span>
+<span id="cb2-19"><a href="#cb2-19" tabindex="-1"></a><span class="in">   Both of these will use the `include` value from the `setup` chunk.</span></span>
+<span id="cb2-20"><a href="#cb2-20" tabindex="-1"></a><span class="in">   ```</span></span>
 <span id="cb2-21"><a href="#cb2-21" tabindex="-1"></a>    </span>
-<span id="cb2-22"><a href="#cb2-22" tabindex="-1"></a>   ```{r}</span>
-<span id="cb2-23"><a href="#cb2-23" tabindex="-1"></a>   # example code for the solution</span>
-<span id="cb2-24"><a href="#cb2-24" tabindex="-1"></a>   ```</span>
+<span id="cb2-22"><a href="#cb2-22" tabindex="-1"></a>   <span class="in">```{r}</span></span>
+<span id="cb2-23"><a href="#cb2-23" tabindex="-1"></a><span class="in">   # example code for the solution</span></span>
+<span id="cb2-24"><a href="#cb2-24" tabindex="-1"></a><span class="in">   ```</span></span>
 <span id="cb2-25"><a href="#cb2-25" tabindex="-1"></a></span>
-<span id="cb2-26"><a href="#cb2-26" tabindex="-1"></a>2. This is question 2.</span></code></pre></div>
+<span id="cb2-26"><a href="#cb2-26" tabindex="-1"></a><span class="ss">2. </span>This is question 2.</span></code></pre></div>
 <p>To render the solutions output file change the setting for
 <code>include</code> within the setup chunk.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>```{r setup, include=FALSE}</span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>knitr::opts_chunk$set(include = TRUE)</span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>```</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="in">```{r setup, include=FALSE}</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="in">knitr::opts_chunk$set(include = TRUE)</span></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
 <p>Setting the global <code>include</code> chunk option also works in a
 Quarto document using the Knitr engine.</p>
 </div>
@@ -128,25 +136,26 @@ Quarto document using the Knitr engine.</p>
 chunk in the YAML header we can specify a <code>params</code> parameter
 with name of our choosing and pass it to
 <code>knitr::opts_chunk(include)</code> as follows.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a>---</span>
-<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>title: "Example exercise"</span>
-<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>author: "My Name"</span>
-<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a>output: html_document</span>
-<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a>params:</span>
-<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a>  solutions: FALSE</span>
-<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a>---</span>
+<div class="sourceCode" id="cb4"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Example exercise"</span></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="an">author:</span><span class="co"> "My Name"</span></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="an">output:</span><span class="co"> html_document</span></span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="an">params:</span></span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="co">  solutions: FALSE</span></span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a></span>
-<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a>```{r setup, include=FALSE}</span>
-<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a>knitr::opts_chunk$set(include = params$solutions)</span>
-<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a>```</span>
-<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a>&lt;!-- ...Rest of document... --&gt;</span></code></pre></div>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a><span class="in">```{r setup, include=FALSE}</span></span>
+<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a><span class="in">knitr::opts_chunk$set(include = params$solutions)</span></span>
+<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a><span class="co">&lt;!-- ...Rest of document... --&gt;</span></span></code></pre></div>
 <p>To generate both questions and solutions output documents from the
 single Rmd file we could run the following code at an R prompt.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">rmarkdown</span><span class="fu">::</span><span class="fu"><a href="https://pkgs.rstudio.com/rmarkdown/reference/render.html" class="external-link">render</a></span><span class="op">(</span><span class="st">"exercise.Rmd"</span>, params <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>solutions <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="fu">rmarkdown</span><span class="fu">::</span><span class="fu"><a href="https://pkgs.rstudio.com/rmarkdown/reference/render.html" class="external-link">render</a></span><span class="op">(</span><span class="st">"exercise.Rmd"</span>, </span>
-<span>                  output_file <span class="op">=</span> <span class="st">"exercise-solutions"</span>, </span>
-<span>                  params <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>solutions <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu">rmarkdown</span><span class="fu">::</span><span class="fu"><a href="https://pkgs.rstudio.com/rmarkdown/reference/render.html" class="external-link">render</a></span><span class="op">(</span><span class="st">"exercise.Rmd"</span>,</span>
+<span>  output_file <span class="op">=</span> <span class="st">"exercise-solutions"</span>,</span>
+<span>  params <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>solutions <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre></div>
 <div class="section level3">
 <h3 id="parameterising-a-quarto-document">Parameterising a Quarto document<a class="anchor" aria-label="anchor" href="#parameterising-a-quarto-document"></a>
 </h3>
@@ -165,9 +174,10 @@ document we run.</p>
 <code class="sourceCode R"><span><span class="fu">quarto</span><span class="fu">::</span><span class="fu">quarto_render</span><span class="op">(</span><span class="st">"exercise.qmd"</span>, execute_params <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>solutions <span class="op">=</span> <span class="st">"FALSE"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p>And to generate the solutions output document we could run.</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">quarto</span><span class="fu">::</span><span class="fu">quarto_render</span><span class="op">(</span><span class="st">"exercise.qmd"</span>, </span>
-<span>                      output_file <span class="op">=</span> <span class="st">"exercise-solutions.html"</span>,</span>
-<span>                      execute_params <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>solutions <span class="op">=</span> <span class="st">"TRUE"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">quarto</span><span class="fu">::</span><span class="fu">quarto_render</span><span class="op">(</span><span class="st">"exercise.qmd"</span>,</span>
+<span>  output_file <span class="op">=</span> <span class="st">"exercise-solutions.html"</span>,</span>
+<span>  execute_params <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>solutions <span class="op">=</span> <span class="st">"TRUE"</span><span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre></div>
 </div>
 </div>
 <div class="section level2">
