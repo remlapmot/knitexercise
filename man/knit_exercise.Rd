@@ -13,9 +13,9 @@ knit_exercise(inputFile, encoding)
 The encoding is always assumed to be UTF-8.}
 }
 \description{
-This function adds \code{-solutions} to the end of the filename before the file extension
+This function adds \code{-questions}/\code{-solutions} to the end of the filename before the file extension
 of the output document from your R Markdown document when rendered by clicking the
-Knit button in RStudio and when you have set \code{solutions: TRUE} in the \verb{params:} field
+Knit button in RStudio and when you have set \code{solutions: FALSE}/\code{solutions: TRUE} in the \verb{params:} field
 of your YAML header.
 }
 \details{
