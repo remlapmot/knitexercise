@@ -68,7 +68,7 @@
       <h1>Generating questions and solutions documents from the same R Markdown or Quarto document</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/remlapmot/knitexercise/blob/v0.4.2/vignettes/example-exercise.Rmd" class="external-link"><code>vignettes/example-exercise.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/remlapmot/knitexercise/blob/master/vignettes/example-exercise.Rmd" class="external-link"><code>vignettes/example-exercise.Rmd</code></a></small>
       <div class="d-none name"><code>example-exercise.Rmd</code></div>
     </div>
 
@@ -198,7 +198,10 @@ header of the Rmd file as follows.</p>
 <p>This function sets <code>knitr::opts_chunk(include)</code>. If
 knitting with the <em>Knit</em> button, when <code>solutions:</code> is
 set to <code>TRUE</code> it adds the suffix <code>-solutions</code> to
-the output filename before the file extension.</p>
+the output filename before the file extension. And when
+<code>solutions:</code> is set to <code>FALSE</code> it adds the suffix
+<code>-questions</code> to the output filename before the file
+extension.</p>
 <p>Customising the Knit button is described by Yihui Xie <a href="https://bookdown.org/yihui/rmarkdown-cookbook/custom-knit.html" class="external-link">here</a>.</p>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
