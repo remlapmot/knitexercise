@@ -29,6 +29,7 @@
 #' @param encoding As per `rmarkdown::render_site()` this is ignored.
 #' The encoding is always assumed to be UTF-8.
 #'
+#' @param ... Additional arguments passed to `rmarkdown::render()`
 #' @examples
 #' \dontrun{
 #' # To launch the R Markdown template run
@@ -39,16 +40,18 @@
 #' }
 #'
 #' @export
-knit_exercise <- function(inputFile, encoding) {
+knit_exercise <- function(inputFile, encoding, ...) {
 	solns <- rmarkdown::yaml_front_matter(inputFile)$params$solutions; if (solns) {
 		rmarkdown::render(
 			input       = inputFile,
 			encoding    = encoding,
-			output_file = paste0(tools::file_path_sans_ext(inputFile), '-solutions'))
+			output_file = paste0(tools::file_path_sans_ext(inputFile), '-solutions'),
+			...)
 	} else {
 		knitr::opts_chunk$set(include = solns); rmarkdown::render(
 			input       = inputFile,
 			encoding    = encoding,
-			output_file = paste0(tools::file_path_sans_ext(inputFile), '-questions'))
+			output_file = paste0(tools::file_path_sans_ext(inputFile), '-questions'),
+			...)
 	}
 }
