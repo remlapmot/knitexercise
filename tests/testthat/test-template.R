@@ -39,3 +39,21 @@ test_that("Test knitexercise::knit_exercise() works", {
 						expect_true(file.exists(output_file))
 					}
 )
+
+test_that("Test knitexercise::knit_exercise() works with a param", {
+	
+	skip_on_cran()
+	
+	template_path <- system.file("rmarkdown",
+															 "templates",
+															 "exercise_template",
+															 "skeleton",
+															 "skeleton.Rmd",
+															 package = "knitexercise")
+	
+	output_file <- paste0(tools::file_path_sans_ext(template_path), "-solutions.html")
+	if (file.exists(output_file)) file.remove(output_file)
+	knit_exercise(template_path, params = list(solutions = TRUE))
+	expect_true(file.exists(output_file))
+}
+)
