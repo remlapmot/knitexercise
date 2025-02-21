@@ -4,13 +4,15 @@
 \alias{knit_exercise}
 \title{Custom Knit function for RStudio}
 \usage{
-knit_exercise(inputFile, encoding)
+knit_exercise(inputFile, encoding, ...)
 }
 \arguments{
 \item{inputFile}{The name of the R Markdown file to be rendered.}
 
 \item{encoding}{As per \code{rmarkdown::render_site()} this is ignored.
 The encoding is always assumed to be UTF-8.}
+
+\item{...}{Additional arguments passed to \code{rmarkdown::render()}}
 }
 \description{
 This function adds \code{-questions}/\code{-solutions} to the end of the filename before the file extension
