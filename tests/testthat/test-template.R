@@ -37,14 +37,15 @@ test_that("Test knitexercise::knit_exercise() works", {
 						if (file.exists(output_file)) file.remove(output_file)
 						knit_exercise(template_path)
 						expect_true(file.exists(output_file))
+						if (file.exists(output_file)) file.remove(output_file)
 					}
 )
 
-test_that("Test knitexercise::knit_exercise() works with a param", {
+test_that("Test knitexercise::knit_exercise() works with params: solutions: TRUE in YAML header", {
 	
 	skip_on_cran()
 	
-	template_path <- system.file("tests",
+	template_path <- system.file("rmarkdown",
 															 "test-solutions.Rmd",
 															 package = "knitexercise")
 	
@@ -52,5 +53,6 @@ test_that("Test knitexercise::knit_exercise() works with a param", {
 	if (file.exists(output_file)) file.remove(output_file)
 	knit_exercise(template_path)
 	expect_true(file.exists(output_file))
+	if (file.exists(output_file)) file.remove(output_file)
 }
 )
