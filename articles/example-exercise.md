@@ -1,0 +1,161 @@
+# Generating questions and solutions documents from the same R Markdown or Quarto document
+
+## Introduction
+
+This package provides a simple extra helper function when knitting an
+`.Rmd` file in which we have questions and solutions.
+
+We ensure elements which are questions are either included as R Markdown
+text or from a code chunk with the chunk option `include=TRUE`.
+
+We suppress or show the solutions with the knitr global document
+`include` chunk option controlled by a setup chunk at the beginning of
+the document as follows
+
+```` markdown
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(include = FALSE) # set to TRUE for solutions document
+```
+````
+
+Paragraph R Markdown text for the solutions is included in `asis` code
+chunks.
+
+## A simple example Rmd file
+
+Therefore a simple `.Rmd` file might be the following.
+
+```` markdown
+---
+title: "Example exercise"
+author: "My Name"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(include = FALSE) # change to TRUE when knitting solutions
+```
+
+1. This is question 1. Which might have some R code you always want to show.
+   ```{r, include=TRUE}
+   # example code for the question
+   ```
+
+   ```{asis}
+   Paragraph text for the solution can be kept in the document in an `asis` chunk.
+   And solution R code in an `r` chunk.
+   Both of these will use the `include` value from the `setup` chunk.
+   ```
+    
+   ```{r}
+   # example code for the solution
+   ```
+
+2. This is question 2.
+````
+
+To render the solutions output file change the setting for `include`
+within the setup chunk.
+
+```` markdown
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(include = TRUE)
+```
+````
+
+Setting the global `include` chunk option also works in a Quarto
+document using the Knitr engine.
+
+## Parameterising our Rmd file
+
+Instead of changing the `include` option in the setup chunk in the YAML
+header we can specify a `params` parameter with name of our choosing and
+pass it to `knitr::opts_chunk(include)` as follows.
+
+```` markdown
+---
+title: "Example exercise"
+author: "My Name"
+output: html_document
+params:
+  solutions: FALSE
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(include = params$solutions)
+```
+<!-- ...Rest of document... -->
+````
+
+To generate both questions and solutions output documents from the
+single Rmd file we could run the following code at an R prompt.
+
+``` r
+rmarkdown::render("exercise.Rmd", params = list(solutions = FALSE))
+rmarkdown::render("exercise.Rmd",
+  output_file = "exercise-solutions",
+  params = list(solutions = TRUE)
+)
+```
+
+### Parameterising a Quarto document
+
+Quarto documents can also use the same parameterisation. The parameters
+can be changed as arguments to the command line interface or input in a
+`params.yml` file as described
+[here](https://quarto.org/docs/computations/parameters.html).
+
+For example, we may invoke the Quarto CLI as follows.
+
+``` bash
+quarto render exercise.qmd -P solutions:TRUE
+```
+
+Or as follows if `params.yml` contains the line `solutions: TRUE`.
+
+``` bash
+quarto render exercise.qmd --execute-params params.yml
+```
+
+Or rendering using the **quarto** R package we can change the parameters
+as follows. To generate the questions output document we run.
+
+``` r
+quarto::quarto_render("exercise.qmd", execute_params = list(solutions = "FALSE"))
+```
+
+And to generate the solutions output document we could run.
+
+``` r
+quarto::quarto_render("exercise.qmd",
+  output_file = "exercise-solutions.html",
+  execute_params = list(solutions = "TRUE")
+)
+```
+
+## Customising the RStudio Knit button
+
+The **knitexercise** package provides the
+[`knit_exercise()`](https://remlapmot.github.io/knitexercise/reference/knit_exercise.md)
+function to customise the *Knit* button in the RStudio Source pane. Its
+use is specified in the YAML header of the Rmd file as follows.
+
+``` yaml
+---
+title: "Example exercise"
+author: "My Name"
+output: html_document
+params:
+  solutions: FALSE
+knit: knitexercise::knit_exercise
+---
+```
+
+This function sets `knitr::opts_chunk(include)`. If knitting with the
+*Knit* button, when `solutions:` is set to `TRUE` it adds the suffix
+`-solutions` to the output filename before the file extension. And when
+`solutions:` is set to `FALSE` it adds the suffix `-questions` to the
+output filename before the file extension.
+
+Customising the Knit button is described by Yihui Xie
+[here](https://bookdown.org/yihui/rmarkdown-cookbook/custom-knit.html).
