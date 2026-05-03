@@ -8,7 +8,7 @@
 ## Citation
 
 Source:
-[`DESCRIPTION`](https://github.com/remlapmot/knitexercise/blob/master/DESCRIPTION)
+[`DESCRIPTION`](https://github.com/remlapmot/knitexercise/blob/v0.4.3/DESCRIPTION)
 
 Palmer T (2026). *knitexercise: Knit Exercise Questions and Solutions
 from the Same R Markdown Document*. R package version 0.4.3,
