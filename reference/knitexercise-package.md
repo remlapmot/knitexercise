@@ -49,3 +49,8 @@ Useful links:
 
 **Maintainer**: Tom Palmer <remlapmot@hotmail.com>
 ([ORCID](https://orcid.org/0000-0003-4655-4511))
+
+Authors:
+
+- Tom Palmer <remlapmot@hotmail.com>
+  ([ORCID](https://orcid.org/0000-0003-4655-4511))

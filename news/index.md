@@ -1,5 +1,9 @@
 # Changelog
 
+## knitexercise 0.4.3
+
+- Bump **roxygen2** to version 8.0.0
+
 ## knitexercise 0.4.2
 
 - Setting the parameter `solutions: FALSE` now adds *-questions* at the

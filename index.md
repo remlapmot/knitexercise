@@ -10,12 +10,14 @@ You can install **knitexercise** as a binary package from r-universe
 with
 
 ``` r
+
 install.packages('knitexercise', repos = c('https://remlapmot.r-universe.dev', 'https://cloud.r-project.org'))
 ```
 
 Or you can install the package from source from GitHub with:
 
 ``` r
+
 if (!requireNamespace("remotes")) install.packages("remotes")
 remotes::install_github("remlapmot/knitexercise")
 ```
@@ -27,5 +29,6 @@ New File \| R Markdown… \| From Template* menu or with the following
 code.
 
 ``` r
+
 rmarkdown::draft("my_exercise.Rmd", template = "exercise_template", package = "knitexercise")
 ```

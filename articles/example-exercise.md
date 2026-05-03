@@ -91,6 +91,7 @@ To generate both questions and solutions output documents from the
 single Rmd file we could run the following code at an R prompt.
 
 ``` r
+
 rmarkdown::render("exercise.Rmd", params = list(solutions = FALSE))
 rmarkdown::render("exercise.Rmd",
   output_file = "exercise-solutions",
@@ -121,12 +122,14 @@ Or rendering using the **quarto** R package we can change the parameters
 as follows. To generate the questions output document we run.
 
 ``` r
+
 quarto::quarto_render("exercise.qmd", execute_params = list(solutions = "FALSE"))
 ```
 
 And to generate the solutions output document we could run.
 
 ``` r
+
 quarto::quarto_render("exercise.qmd",
   output_file = "exercise-solutions.html",
   execute_params = list(solutions = "TRUE")
