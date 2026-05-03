@@ -1,3 +1,7 @@
+# knitexercise 0.4.3
+
+* Bump **roxygen2** to version 8.0.0
+
 # knitexercise 0.4.2
 
 * Setting the parameter `solutions: FALSE` now adds _-questions_ at the end of the filename before the file extension
