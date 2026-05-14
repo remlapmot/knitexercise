@@ -1,8 +1,8 @@
 # knitexercise: R package to knit questions and solutions documents from the same R Markdown document
 
 This is a simple package which provides a custom knit function,
-`knit_exercise`, to knit separate questions and answers output documents
-from the same R Markdown file.
+`knit_exercise`, to knit separate questions and solutions output
+documents from the same R Markdown file.
 
 ## Installation
 

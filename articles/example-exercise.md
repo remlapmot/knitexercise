@@ -8,9 +8,9 @@ This package provides a simple extra helper function when knitting an
 We ensure elements which are questions are either included as R Markdown
 text or from a code chunk with the chunk option `include=TRUE`.
 
-We suppress or show the solutions with the knitr global document
-`include` chunk option controlled by a setup chunk at the beginning of
-the document as follows
+We suppress or show the solutions with the knitr global `include` chunk
+option controlled by a setup chunk at the beginning of the document as
+follows
 
 ```` markdown
 ```{r setup, include=FALSE}
