@@ -44,7 +44,13 @@ test_that("Test knitexercise::knit_exercise() works", {
 
   knit_exercise(input)
 
-  expect_true(file.exists(file.path(tmpdir, "skeleton-questions.html")))
+  output_file <- file.path(tmpdir, "skeleton-questions.html")
+  expect_true(file.exists(output_file))
+  output <- readLines(output_file)
+  # solution chunks must be hidden in the questions document
+  expect_false(any(grepl("Paragraph text for solutions", output)))
+  # chunks with include=TRUE must still appear
+  expect_true(any(grepl("1 + 1", output, fixed = TRUE)))
 })
 
 test_that("Test knitexercise::knit_exercise() works with params: solutions: TRUE in YAML header", {
@@ -64,5 +70,10 @@ test_that("Test knitexercise::knit_exercise() works with params: solutions: TRUE
 
   knit_exercise(input)
 
-  expect_true(file.exists(file.path(tmpdir, "test-solutions-solutions.html")))
+  output_file <- file.path(tmpdir, "test-solutions-solutions.html")
+  expect_true(file.exists(output_file))
+  # solution chunks must be shown, even after a questions document
+  # has been knitted earlier in the same session
+  output <- readLines(output_file)
+  expect_true(any(grepl("Paragraph text for solutions", output)))
 })
