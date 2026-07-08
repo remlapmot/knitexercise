@@ -48,13 +48,13 @@ knit_exercise <- function(inputFile, encoding) {
     rmarkdown::render(
       input = inputFile,
       encoding = encoding,
-      output_file = paste0(tools::file_path_sans_ext(inputFile), '-solutions')
+      output_file = paste0(tools::file_path_sans_ext(basename(inputFile)), '-solutions')
     )
   } else {
     rmarkdown::render(
       input = inputFile,
       encoding = encoding,
-      output_file = paste0(tools::file_path_sans_ext(inputFile), '-questions')
+      output_file = paste0(tools::file_path_sans_ext(basename(inputFile)), '-questions')
     )
   }
 }
