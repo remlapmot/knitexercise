@@ -41,6 +41,9 @@
 #' @export
 knit_exercise <- function(inputFile, encoding) {
   solns <- rmarkdown::yaml_front_matter(inputFile)$params$solutions
+  old_include <- knitr::opts_chunk$get('include')
+  on.exit(knitr::opts_chunk$set(include = old_include), add = TRUE)
+  knitr::opts_chunk$set(include = solns)
   if (solns) {
     rmarkdown::render(
       input = inputFile,
@@ -48,7 +51,6 @@ knit_exercise <- function(inputFile, encoding) {
       output_file = paste0(tools::file_path_sans_ext(inputFile), '-solutions')
     )
   } else {
-    knitr::opts_chunk$set(include = solns)
     rmarkdown::render(
       input = inputFile,
       encoding = encoding,
