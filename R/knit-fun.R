@@ -39,7 +39,7 @@
 #' }
 #'
 #' @export
-knit_exercise <- function(inputFile, encoding) {
+knit_exercise <- function(inputFile, encoding = 'UTF-8') {
   solns <- rmarkdown::yaml_front_matter(inputFile)$params$solutions
   if (!is.logical(solns) || length(solns) != 1L || is.na(solns)) {
     stop(

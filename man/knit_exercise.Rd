@@ -4,7 +4,7 @@
 \alias{knit_exercise}
 \title{Custom Knit function for RStudio}
 \usage{
-knit_exercise(inputFile, encoding)
+knit_exercise(inputFile, encoding = "UTF-8")
 }
 \arguments{
 \item{inputFile}{The name of the R Markdown file to be rendered.}
