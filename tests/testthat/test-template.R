@@ -36,14 +36,15 @@ test_that("Test knitexercise::knit_exercise() works", {
     package = "knitexercise"
   )
 
-  output_file <- paste0(
-    tools::file_path_sans_ext(template_path),
-    "-questions.html"
-  )
-  if (file.exists(output_file)) file.remove(output_file)
-  knit_exercise(template_path)
-  expect_true(file.exists(output_file))
-  if (file.exists(output_file)) file.remove(output_file)
+  tmpdir <- tempfile()
+  dir.create(tmpdir)
+  on.exit(unlink(tmpdir, recursive = TRUE), add = TRUE)
+  input <- file.path(tmpdir, "skeleton.Rmd")
+  file.copy(template_path, input)
+
+  knit_exercise(input)
+
+  expect_true(file.exists(file.path(tmpdir, "skeleton-questions.html")))
 })
 
 test_that("Test knitexercise::knit_exercise() works with params: solutions: TRUE in YAML header", {
@@ -55,12 +56,13 @@ test_that("Test knitexercise::knit_exercise() works with params: solutions: TRUE
     package = "knitexercise"
   )
 
-  output_file <- paste0(
-    tools::file_path_sans_ext(template_path),
-    "-solutions.html"
-  )
-  if (file.exists(output_file)) file.remove(output_file)
-  knit_exercise(template_path)
-  expect_true(file.exists(output_file))
-  if (file.exists(output_file)) file.remove(output_file)
+  tmpdir <- tempfile()
+  dir.create(tmpdir)
+  on.exit(unlink(tmpdir, recursive = TRUE), add = TRUE)
+  input <- file.path(tmpdir, "test-solutions.Rmd")
+  file.copy(template_path, input)
+
+  knit_exercise(input)
+
+  expect_true(file.exists(file.path(tmpdir, "test-solutions-solutions.html")))
 })
