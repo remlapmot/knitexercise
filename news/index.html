@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">knitexercise</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.3</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.4</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,6 +42,17 @@
       <small>Source: <a href="https://github.com/remlapmot/knitexercise/blob/master/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.4.4" id="knitexercise-044">knitexercise 0.4.4<a class="anchor" aria-label="anchor" href="#knitexercise-044"></a></h2>
+<ul><li>Fix <code><a href="../reference/knit_exercise.html">knit_exercise()</a></code> leaving the global chunk option <code>include</code> set to <code>FALSE</code> in the session after knitting a questions document, which caused subsequent documents knitted in the same session (including solutions documents) to have all their chunks excluded</li>
+<li>Fix <code><a href="../reference/knit_exercise.html">knit_exercise()</a></code> failing when given a relative input path containing a directory, e.g. <code>knit_exercise("exercises/sheet1.Rmd")</code>
+</li>
+<li>
+<code><a href="../reference/knit_exercise.html">knit_exercise()</a></code> now gives a helpful error message if <code>solutions:</code> is missing from the <code>params:</code> field of the YAML header or is not <code>TRUE</code>/<code>FALSE</code>
+</li>
+<li>The <code>encoding</code> argument of <code><a href="../reference/knit_exercise.html">knit_exercise()</a></code> now defaults to <code>"UTF-8"</code>, so the function can be called with just the input file</li>
+<li>The package tests now render in a temporary directory, check the rendered documents show/hide the solutions as appropriate, and use <strong>testthat</strong> edition 3</li>
+</ul></div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.4.3" id="knitexercise-043">knitexercise 0.4.3<a class="anchor" aria-label="anchor" href="#knitexercise-043"></a></h2>
 <ul><li>Bump <strong>roxygen2</strong> to version 8.0.0</li>
@@ -80,7 +91,7 @@
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.1.</p>
 </div>
 
     </footer></div>

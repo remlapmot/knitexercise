@@ -9,7 +9,7 @@ of your YAML header.
 ## Usage
 
 ``` r
-knit_exercise(inputFile, encoding)
+knit_exercise(inputFile, encoding = "UTF-8")
 ```
 
 ## Arguments
