@@ -1,5 +1,3 @@
-context("render the template")
-
 test_that("rendering the template successfully
 					produces an output document", {
   skip_on_cran()
