@@ -41,6 +41,13 @@
 #' @export
 knit_exercise <- function(inputFile, encoding) {
   solns <- rmarkdown::yaml_front_matter(inputFile)$params$solutions
+  if (!is.logical(solns) || length(solns) != 1L || is.na(solns)) {
+    stop(
+      'Set `solutions: TRUE` or `solutions: FALSE` under `params:` in the YAML header of ',
+      inputFile,
+      call. = FALSE
+    )
+  }
   old_include <- knitr::opts_chunk$get('include')
   on.exit(knitr::opts_chunk$set(include = old_include), add = TRUE)
   knitr::opts_chunk$set(include = solns)
