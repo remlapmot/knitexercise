@@ -51,17 +51,10 @@ knit_exercise <- function(inputFile, encoding = 'UTF-8') {
   old_include <- knitr::opts_chunk$get('include')
   on.exit(knitr::opts_chunk$set(include = old_include), add = TRUE)
   knitr::opts_chunk$set(include = solns)
-  if (solns) {
-    rmarkdown::render(
-      input = inputFile,
-      encoding = encoding,
-      output_file = paste0(tools::file_path_sans_ext(basename(inputFile)), '-solutions')
-    )
-  } else {
-    rmarkdown::render(
-      input = inputFile,
-      encoding = encoding,
-      output_file = paste0(tools::file_path_sans_ext(basename(inputFile)), '-questions')
-    )
-  }
+  suffix <- if (solns) '-solutions' else '-questions'
+  rmarkdown::render(
+    input = inputFile,
+    encoding = encoding,
+    output_file = paste0(tools::file_path_sans_ext(basename(inputFile)), suffix)
+  )
 }
