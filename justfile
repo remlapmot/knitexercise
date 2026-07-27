@@ -1,6 +1,6 @@
 install:
-    devtools::install(vignettes = TRUE)
+    R -e "devtools::install(vignettes = TRUE)"
 docs:
-    devtools::document()
+    R -e "devtools::document()"
 check: docs
-    devtools::check()
+    R -e "devtools::check()"
