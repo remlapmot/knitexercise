@@ -1,8 +1,8 @@
 install:
-    R -e "devtools::install(vignettes = TRUE)"
+    Rscript -e "devtools::install(vignettes = TRUE)"
 docs:
-    R -e "devtools::document()"
+    Rscript -e "devtools::document()"
 check: docs
-    R -e "devtools::check()"
+    Rscript -e "devtools::check()"
 dev:
-    R -e "pak::local_install_dev_deps()"
+    Rscript -e "pak::local_install_dev_deps()"
